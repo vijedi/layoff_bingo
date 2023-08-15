@@ -1,0 +1,114 @@
+squares:
+  - text: boost operational efficiency
+    layoffs: 
+      - evernote_07_23
+      - meta_04_23
+  - text: impacted individuals
+    layoffs: 
+      - evernote_07_23
+  - text: ambitious plans
+    layoffs:
+      - evernote_07_23
+  - text: I take full accountability
+    layoffs:
+      - headspace_06_23
+  - text: current economic environment
+    layoffs:
+      - headspace_06_23
+  - text: optimism got the best of us
+    layoffs:
+      - headspace_06_23
+  - text: hard calls
+    layoffs:
+      - headspace_06_23
+  - text: difficult capital markets
+    layoffs:
+      - headspace_06_23
+  - text: opportunity to be profitable
+    layoffs:
+      - headspace_06_23
+      - lyft_04_23
+  - text: closer to our purpose
+    layoffs:
+      - lyft_04_23
+  - text: difficult environment
+    layoffs:
+      - meta_04_23
+  - text: period of uncertainty
+    layoffs:
+      - meta_04_23
+      - ea_03_23
+  - text: new economic reality
+    layoffs:
+      - meta_04_23
+  - text: position of strength
+    layoffs:
+      - ea_03_23
+  - text: lead this transformation
+    layoffs:
+      - ea_03_23
+  - text: evolving business needs
+    layoffs:
+      - lucid_03_23
+  - text: cost discipline
+    layoffs:
+      - lucid_03_23
+
+layoffs:
+  evernote_07_23:
+    url: https://evernote.com/blog/moving-the-evernote-center-of-operations-to-europe/
+    company: evernote
+    description: Evernote decided to consolidate all of their operations to Europe and laid off all of their staff in the Americas.
+  headspace_06_23:
+    url: https://news.ycombinator.com/item?id=36526525
+    company: headspace
+    description: >
+      Headspace went through another round of cuts to get towards profitability, including cuts to active therapists immediately severing their established care relationships.
+      No word on whether the layoffs included free stress counciling from Headspace.
+  lyft_04_23:
+    url: https://www.lyft.com/blog/posts/a-note-from-lyfts-ceo-david-risher
+    company: lyft
+    description: >
+      Lyft laid off 1,200 jobs in an effort to increase margins due to the challenges of raising additional capital for operations. 
+  meta_04_23:
+    url: https://about.fb.com/news/2023/03/mark-zuckerberg-meta-year-of-efficiency
+    company: meta
+    description: >
+      As another effort in the year of efficiency Zuckerberg made significant cuts in his VR boondoggle, probably to appease complaining investors as add revenues have been impacted.
+      A likely casualty of these cuts is the project to add legs to VR avatars.
+  ea_03_23:
+    url: https://www.ea.com/news/update-to-our-business-march-2023
+    company: ea
+    description: >
+      Perhaps concluding that it could make a reskin of last years game with much fewer people, EA announced that it would layoff about 6% of its workforce who were "not contributing to the strategy"
+  lucid_03_23:
+    url: https://www.autoweek.com/news/green-cars/a43466007/lucid-motors-layoffs/
+    company: lucid
+    description: >
+      Possbily due to the saturation of the market for $100,000+ EV cars along with a potential drop in demand due to "macro economic conditions," Lucid decided that the best way to hit production
+      targets was to remove some of the workforce. I'm not sure that was the lession that was supposed to be be taken from the "Mythical Man-Month."
+
+companies:
+  evernote: 
+    description: > 
+      Evernote was one of the first Silicon Valley "Unicorns" (private companies that were worth more than $1bn). I used to be a paid user of their subscription
+      services, but like most others started finding it less useful as time went on and stopped paying. A darling no more, Evernote has been in a steady decline.
+  headspace:
+    description: >
+      Headspace is an licensed medical provider and online mental health platform. 
+  lyft:
+    description: >
+      Touted as a friendly Uber, Lyft has always been second fiddle in the driver gig space. Though they have expanded into other forms of mobility,
+      they continue to be a low margin business that relies on investment to sustain operations.
+  meta:
+    description: >
+      Started at Harvard by Mark Zuckerberg to creep on co-eds then work out his Machiavellian desires, Facebook is now the largest social network in the world far eclipsing Nextdoor's ability to 
+      amplify the racist ramblings of angry old people. Exceeding its original vision, Facebook has created platforms for younger, attention starved influencers (Instagram) and 
+      an even better way for old people to spread misinformation and racist rants (Whatsapp).
+  ea:
+    description: >
+      An early pioneer in home video gaming, Electronic Arts has had the most success recently by offering the same game with updated stats year after year through its sport franchises. Not
+      satisfied with this mechanism of "extracting value" the company has recently moved to add as many microtransactions as possible to further blur the lines between gaming and work.
+  lucid:
+    description: >
+      Another EV car startup, Lucid started delivering their high-priced, high-powered cars in 2022. Plagued supply chain issues and demand, output has been far lower than expectations thus far.
