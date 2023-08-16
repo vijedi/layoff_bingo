@@ -6,15 +6,24 @@ squares:
   - text: impacted individuals
     layoffs: 
       - evernote_07_23
+      - indeed_03_23
+      - glassdoor_03_23
+      - amazon_03_23
   - text: ambitious plans
     layoffs:
       - evernote_07_23
   - text: I take full accountability
     layoffs:
       - headspace_06_23
-  - text: current economic environment
+      - indeed_03_23
+      - hackerone_08_23
+  - text: current (macro)economic environment
     layoffs:
       - headspace_06_23
+      - glassdoor_03_23
+      - atlassian_03_23
+      - hackerone_08_23
+      - planet_08_23
   - text: optimism got the best of us
     layoffs:
       - headspace_06_23
@@ -28,6 +37,7 @@ squares:
     layoffs:
       - headspace_06_23
       - lyft_04_23
+      - planet_08_23
   - text: closer to our purpose
     layoffs:
       - lyft_04_23
@@ -38,6 +48,7 @@ squares:
     layoffs:
       - meta_04_23
       - ea_03_23
+      - amazon_03_23
   - text: new economic reality
     layoffs:
       - meta_04_23
@@ -53,7 +64,68 @@ squares:
   - text: cost discipline
     layoffs:
       - lucid_03_23
-
+  - text: heartbroken
+    layoffs:
+      - indeed_03_23
+  - text: investing in our future
+    layoffs:
+      - indeed_03_23
+  - text: affect those who are staying
+    layoffs:
+      - indeed_03_23
+  - text: remain focused
+    layoffs:
+      - glassdoor_03_23
+  - text: support each other
+    layoffs:
+      - glassdoor_03_23
+  - text: re-prioritization
+    layoffs:
+      - amazon_03_23
+  - text: optimistic about the future
+    layoffs:
+      - amazon_03_23
+  - text: rebalance
+    layoffs:
+      - atlassian_03_23
+  - text: valuable contributions
+    layoffs:
+      - twitter_11_22
+      - planet_08_23
+  - text: healthy path
+    layoffs:
+      - twitter_11_22
+  - text: place of strength
+    layoffs:
+      - rapid7_08_23
+  - text: long term success
+    layoffs:
+      - rapid7_08_23
+  - text: scale intentionally
+    layoffs:
+      - rapid7_08_23
+  - text: painful and necessary
+    layoffs:
+      - hackerone_08_23
+  - text: shifts in our market
+    layoffs:
+      - hackerone_08_23
+  - text: one-time event
+    layoffs:
+      - hackerone_08_23
+  - text: historically understaffed
+    layoffs:
+      - planet_08_23
+  - text: narrow focus
+    layoffs:
+      - niantic_06_23
+  - text: unique challenges
+    layoffs:
+      - niantic_06_23
+  - text: streamline processes
+    layoffs:
+      - niantic_06_23
+    
 layoffs:
   evernote_07_23:
     url: https://evernote.com/blog/moving-the-evernote-center-of-operations-to-europe/
@@ -64,7 +136,7 @@ layoffs:
     company: headspace
     description: >
       Headspace went through another round of cuts to get towards profitability, including cuts to active therapists immediately severing their established care relationships.
-      No word on whether the layoffs included free stress counciling from Headspace.
+      No word on whether the layoffs included free stress counseling from Headspace.
   lyft_04_23:
     url: https://www.lyft.com/blog/posts/a-note-from-lyfts-ceo-david-risher
     company: lyft
@@ -86,7 +158,55 @@ layoffs:
     company: lucid
     description: >
       Possbily due to the saturation of the market for $100,000+ EV cars along with a potential drop in demand due to "macro economic conditions," Lucid decided that the best way to hit production
-      targets was to remove some of the workforce. I'm not sure that was the lession that was supposed to be be taken from the "Mythical Man-Month."
+      targets was to remove some of the workforce. I'm not sure that was the lesson that was supposed to be be taken from the "Mythical Man-Month."
+  indeed_03_23:
+    url: https://www.indeed.com/press/releases/a-message-from-our-ceo-chris-hyams?co=US
+    company: indeed
+    description: >
+      It's never a good sign when a company responsible for finding people jobs reduces headcount. Citing hiring trends the CEO decided that the company was simply too big.
+  glassdoor_03_23:
+    url: https://www.glassdoor.com/about/press-release//a-message-from-glassdoor-ceo-christian-sutherland-wong/
+    company: glassdoor
+    description: >
+      Like their sister company Indeed, Glassdoor suffered from the downturn in US based hiring and decided to contribute to the problem.
+  amazon_03_23:
+    url: https://www.aboutamazon.com/news/company-news/update-from-ceo-andy-jassy-on-amazons-operating-plan-and-additional-role-eliminations
+    company: amazon
+    description: >
+      It seems that in the effort to get everyone back in the office, Amazon realized that either had to buy more desks or reduce headcount. It chose the latter.
+  atlassian_03_23:
+    url: https://d18rn0p25nwr6d.cloudfront.net/CIK-0001650372/dc07e25f-4918-4383-87b6-d0ed37837344.pdf#page=4&zoom=100,24,24
+    company: atlassian
+    description: >
+      Atlassian decided to rebalance their business in light of tough economic conditions. They were
+      clear that this was a strategic shift in which roles they thought were important, not anything
+      to do with current revenues.
+  twitter_11_22:
+    url: https://archive.ph/KrpUY
+    company: twitter
+    description: >
+      Post Elon Twitter was all about reducing headcount. This was just the start.
+  rapid7_08_23:
+    url: https://www.rapid7.com/blog/post/2023/08/08/a-message-from-rapid7-ceo-corey-thomas/
+    company: rapid7
+    description: >
+      In a restructuring to cut costs, Rapid7 laid off 18% of it's workforce.
+  hackerone_08_23:
+    url: https://www.hackerone.com/ceo/company-update
+    company: hackerone
+    description: >
+      Another situation of a changing environment causing the need to downsize
+  planet_08_23:
+    url: https://www.planet.com/pulse/a-note-from-our-ceo/
+    company: planet
+    description: >
+      The company got to heavy and slow
+  niantic_06_23:
+    url: https://nianticlabs.com/news/organizational-update
+    company: niantic
+    description: >
+      Another case of over expansion during the pandemic with the belief that customer behavior had changed
+      for good instead of being a temporary blip.
 
 companies:
   evernote: 
@@ -112,3 +232,33 @@ companies:
   lucid:
     description: >
       Another EV car startup, Lucid started delivering their high-priced, high-powered cars in 2022. Plagued supply chain issues and demand, output has been far lower than expectations thus far.
+  indeed:
+    description: >
+      Indeed is a jobsearch engine that aggregates information from multiple job postings across the web.
+  glassdoor:
+    description: >
+      Glassdoor gives the opportunity for employees to rate their employer. Purportedly for allowing for good candidate decisions, the site is mostly used by kool-aid drinkers to 
+      profess their company love while their disgruntled counterparts get the opportunity to vent.
+  amazon:
+    description: >
+      One of the biggest employers in the world, Amazon has long since moved from being just the everything store to an everything company.
+  atlassian:
+    description: >
+      Atlassian is one of the leaders in software collaboration products and rode the Agile wave especially
+      well with Jira and Confluence.
+  twitter:
+    description: >
+      Once the social media darling of the journalist and political world, the takeover by a rich man-child
+      turned it into the online equivalent of Fox News.
+  rapid7:
+    description: >
+      TBD
+  hackerone:
+    description: >
+      TBD
+  planet:
+    description: >
+      TBD
+  niantic:
+    description: >
+      TBD
