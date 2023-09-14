@@ -5,52 +5,43 @@
 	const board = generateBoard();
 </script>
 
-<div class="board-container">
-	<div class="board">
-		<h1 class="title">L E T G O</h1>
-		{#each board.squares as row, i}
-			<ul class="row{i}">
+<div class="page-container">
+	<h1 class="title">L E T G O</h1>
+	<div class="board-container">
+		<ul class="board">
+			{#each board.squares as row, i}
 				{#each row as square, j}
-					<li class="col{j}">{square.text}</li>
+					<li class="col{j}"><Square content={square} /></li>
 				{/each}
-			</ul>
-		{/each}
+			{/each}
+		</ul>
 	</div>
 </div>
 
 <style>
-	.board-container {
+	.page-container {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+		margin: auto;
 	}
 
+	.board-container {
+		width: calc(100vmin - 20px);
+	}
 	ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		display: flex;
-	}
-
-	ul.row0 {
-		border-top: 2px solid #ee8c11aa;
-	}
-
-	ul.row4 {
-		border-bottom: 2px solid #ee8c11aa;
-	}
-
-	.board li {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
 		border: 2px solid #ee8c11aa;
-		flex: 1;
 	}
 
-	.board li.col0 {
-		border-left: 4px solid #ee8c11aa;
-	}
-
-	.board li.col4 {
-		border-right: 4px solid #ee8c11aa;
+	li {
+		aspect-ratio: 1 / 1;
+		border: 2px solid #ee8c11aa;
 	}
 
 	h1 {

@@ -221,7 +221,7 @@ const squares: Square[] = [
 	},
 	{
 		id: '004',
-		text: 'current (macro)economic environment',
+		text: 'current (macro) economic environment',
 		layoffIds: [
 			'headspace_06_23',
 			'glassdoor_03_23',
