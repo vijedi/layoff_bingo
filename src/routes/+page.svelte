@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Square from './Square.svelte';
-	import { generateBoard } from '$lib/board_content';
+	import Tile from './Tile.svelte';
+	import { generateBoard } from '$lib/board';
 
 	const board = generateBoard();
 </script>
@@ -9,9 +9,9 @@
 	<h1 class="title">L E T G O</h1>
 	<div class="board-container">
 		<ul class="board">
-			{#each board.squares as row, i}
-				{#each row as square, j}
-					<li class="col{j}"><Square content={square} /></li>
+			{#each board.tiles as row}
+				{#each row as tile}
+					<li><Tile {tile} /></li>
 				{/each}
 			{/each}
 		</ul>

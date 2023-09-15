@@ -1,28 +1,6 @@
-export interface Square {
-	id: string;
-	text: string;
-	layoffIds: string[];
-}
+import type { Cliche, Layoff, Company } from './board_types';
 
-export interface Layoff {
-	layoffId: string;
-	companyId: string;
-	description: string;
-	url: string;
-}
-
-export interface Company {
-	companyId: string;
-	description: string;
-}
-
-export interface Board {
-	squares: Square[][];
-	layoffs: Map<string, Layoff>;
-	companies: Map<string, Layoff>;
-}
-
-const companies: Company[] = [
+export const companies: Company[] = [
 	{
 		companyId: 'evernote',
 		description:
@@ -95,7 +73,7 @@ const companies: Company[] = [
 	}
 ];
 
-const layoffs: Layoff[] = [
+export const layoffs: Layoff[] = [
 	{
 		layoffId: 'evernote_07_23',
 		companyId: 'evernote',
@@ -198,7 +176,8 @@ const layoffs: Layoff[] = [
 		url: 'https://nianticlabs.com/news/organizational-update'
 	}
 ];
-const squares: Square[] = [
+
+export const cliches: Cliche[] = [
 	{
 		id: '000',
 		text: 'boost operational efficiency',
@@ -391,21 +370,3 @@ const squares: Square[] = [
 		layoffIds: ['niantic_06_23']
 	}
 ];
-
-export function generateBoard(): Board {
-	const workingSet = [...squares];
-
-	const boardSquares: Square[][] = [[], [], [], [], []];
-	for (let row = 0; row < 5; row++) {
-		boardSquares[row] = [];
-		for (let col = 0; col < 5; col++) {
-			const squareIndex = Math.floor(Math.random() * workingSet.length);
-			boardSquares[row].push(workingSet[squareIndex]);
-			workingSet.splice(squareIndex, 1);
-		}
-	}
-
-	return {
-		squares: boardSquares
-	};
-}

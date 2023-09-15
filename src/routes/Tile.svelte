@@ -1,15 +1,16 @@
 <script lang="ts">
-	export let content: Square;
+	import type { Tile } from '$lib/board_types';
+	export let tile: Tile;
 
-	let selected: boolean = false;
+	$: selected = tile.selected;
 	function toggle() {
-		selected = !selected;
+		tile.selected = !tile.selected;
 	}
 </script>
 
 <button type="button" on:click={toggle} class:selected>
 	<div class="button-content">
-		{content.text}
+		{tile.cliche.text}
 	</div>
 </button>
 
