@@ -1,12 +1,19 @@
 <script lang="ts">
 	import Tile from './Tile.svelte';
+	import WinnerLayover from './WinnerLayover.svelte';
 	import { generateBoard, checkIfWinner } from '$lib/board';
+	import { getBodyClassList } from '$lib/domUtil';
 
+	let displayWinnerDialog = false;
 	const board = generateBoard();
 	const handleSelection = (event) => {
 		const isWinner = checkIfWinner(board);
 		if (isWinner) {
-			alert('Winner!!');
+			displayWinnerDialog = true;
+			getBodyClassList().add('no-scroll');
+		} else {
+			displayWinnerDialog = false;
+			getBodyClassList().remove('no-scroll');
 		}
 	};
 </script>
@@ -23,6 +30,10 @@
 		</ul>
 	</div>
 </div>
+
+{#if displayWinnerDialog}
+	<WinnerLayover />
+{/if}
 
 <style>
 	.page-container {
