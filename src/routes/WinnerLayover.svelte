@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let winningTiles: Tile[];
 </script>
 
 <div class="winner-layover">
@@ -9,7 +10,6 @@
 			people have had the same emotions and heard the same words (cuz you just matched them!).
 		</p>
 		<h3>The clichés matched this round:</h3>
-		<div>TODO</div>
 	</div>
 </div>
 

@@ -5,7 +5,7 @@
 	import { getBodyClassList } from '$lib/domUtil';
 
 	let displayWinnerDialog = false;
-	let matched = [];
+	let winningTiles = [];
 	const board = generateBoard();
 	const handleSelection = (event) => {
 		if (displayWinnerDialog) {
@@ -13,8 +13,9 @@
 			return;
 		}
 
-		const winningTiles = checkIfWinner(board);
-		if (winningTiles && displayWinnerDialog == false) {
+		winningTiles = checkIfWinner(board);
+		console.log(winningTiles);
+		if (winningTiles) {
 			displayWinnerDialog = true;
 			getBodyClassList().add('no-scroll');
 		}
@@ -40,7 +41,7 @@
 </div>
 
 {#if displayWinnerDialog}
-	<WinnerLayover />
+	<WinnerLayover {winningTiles} />
 {/if}
 
 <style>
