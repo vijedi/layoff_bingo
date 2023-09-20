@@ -1,10 +1,15 @@
 <script lang="ts">
 	import type { Tile } from '$lib/board_types';
+	import { createEventDispatcher } from 'svelte';
+
 	export let tile: Tile;
+
+	const dispatch = createEventDispatcher();
 
 	$: selected = tile.selected;
 	function toggle() {
 		tile.selected = !tile.selected;
+		dispatch('tileSelected', { tile });
 	}
 </script>
 

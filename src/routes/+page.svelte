@@ -1,8 +1,14 @@
 <script lang="ts">
 	import Tile from './Tile.svelte';
-	import { generateBoard } from '$lib/board';
+	import { generateBoard, checkIfWinner } from '$lib/board';
 
 	const board = generateBoard();
+	const handleSelection = (event) => {
+		const isWinner = checkIfWinner(board);
+		if (isWinner) {
+			alert('Winner!!');
+		}
+	};
 </script>
 
 <div class="page-container">
@@ -11,7 +17,7 @@
 		<ul class="board">
 			{#each board.tiles as row}
 				{#each row as tile}
-					<li><Tile {tile} /></li>
+					<li><Tile {tile} on:tileSelected={handleSelection} /></li>
 				{/each}
 			{/each}
 		</ul>
