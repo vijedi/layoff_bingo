@@ -54,58 +54,59 @@ function generateFreeSpace(): Tile {
  * @param {Board} board - the board to check for winning conditions
  * @returns {boolean} true if the board is a winner via game rules
  */
-export function checkIfWinner(board: Board): boolean {
+export function checkIfWinner(board: Board): Tile[] | null {
 	const tiles = board.tiles;
-	// Just do this dumb for now. If somoene wants to dig me in an interview for it, so be it
+	// There's a way to do this where you don't look at the same box twice, but it takes
+	// more memory and takes more time to write. This should be trivially quick and this
+	// approach is relatively easy to understand on a revisit.
 	return checkRows(tiles) || checkColumns(tiles) || checkDiagonals(tiles);
 }
 
-function checkRows(tiles: Tile[][]): boolean {
-	for (let row = 0; row < GRID_SIZE; row++) {
-		const anyUnselected = tiles[row].find((tile: Tile) => !tile.selected);
-		if (!anyUnselected) {
-			return true;
-		}
-	}
-
-	return false;
-}
-
-function checkColumns(tiles: Tile[][]): boolean {
-	for (let col = 0; col < GRID_SIZE; col++) {
-		let row = 0;
-		for (; row < GRID_SIZE; row++) {
-			if (!tiles[row][col].selected) {
-				break;
-			}
-		}
-
-		if (row == GRID_SIZE) {
-			return true;
-		}
-	}
-
-	return false;
-}
-
-function checkDiagonals(tiles: Tile[][]): boolean {
-	let pos = 0;
-	for (; pos < GRID_SIZE; pos++) {
-		if (!tiles[pos][pos].selected) {
+function checkIterate(getTile: (outer: number, inner: number) => Tile, outer?: number) {
+	const selected = [];
+	for (let inner = 0; inner < GRID_SIZE; inner++) {
+		const tile = getTile(typeof outer == 'number' ? outer || 0 : inner, inner);
+		if (tile.selected) {
+			selected.push(tile);
+		} else {
 			break;
 		}
 	}
 
-	if (pos == GRID_SIZE) {
-		return true;
-	}
+	return selected;
+}
 
-	pos = GRID_SIZE - 1;
-	for (; pos >= 0; pos--) {
-		const row = GRID_SIZE - (pos + 1);
-		if (!tiles[row][pos].selected) {
-			break;
+function checkOuterIterate(getTile: (outer: number, inner: number) => Tile) {
+	for (let outer = 0; outer < GRID_SIZE; outer++) {
+		const selected = checkIterate(getTile, outer);
+
+		if (selected.length == GRID_SIZE) {
+			return selected;
 		}
 	}
-	return pos < 0;
+
+	return null;
+}
+
+function checkRows(tiles: Tile[][]): Tile[] | null {
+	// treat the outer iteration as rows and the inner iteration as columns
+	return checkOuterIterate((outer, inner) => tiles[outer][inner]);
+}
+
+function checkColumns(tiles: Tile[][]): Tile[] | null {
+	// treat the outer iteration as columns and the inner iteration as rows
+	return checkOuterIterate((outer, inner) => tiles[inner][outer]);
+}
+
+function checkDiagonals(tiles: Tile[][]): Tile[] | null {
+	let selected = checkIterate((pos) => tiles[pos][pos]);
+	if (selected.length == GRID_SIZE) {
+		return selected;
+	}
+
+	selected = checkIterate((pos) => tiles[GRID_SIZE - 1 - pos][pos]);
+	if (selected.length == GRID_SIZE) {
+		return selected;
+	}
+	return null;
 }

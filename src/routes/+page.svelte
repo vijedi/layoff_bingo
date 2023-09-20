@@ -5,21 +5,29 @@
 	import { getBodyClassList } from '$lib/domUtil';
 
 	let displayWinnerDialog = false;
+	let matched = [];
 	const board = generateBoard();
 	const handleSelection = (event) => {
-		const isWinner = checkIfWinner(board);
-		if (isWinner) {
+		if (displayWinnerDialog) {
+			// nothing to do, this has already been evaluated
+			return;
+		}
+
+		const winningTiles = checkIfWinner(board);
+		if (winningTiles && displayWinnerDialog == false) {
 			displayWinnerDialog = true;
 			getBodyClassList().add('no-scroll');
-		} else {
-			displayWinnerDialog = false;
-			getBodyClassList().remove('no-scroll');
 		}
+	};
+
+	const hideWinner = (event) => {
+		displayWinnerDialog = false;
+		getBodyClassList().remove('no-scroll');
 	};
 </script>
 
 <div class="page-container">
-	<h1 class="title">L E T G O</h1>
+	<h1 class="title">LETGO</h1>
 	<div class="board-container">
 		<ul class="board">
 			{#each board.tiles as row}
@@ -37,6 +45,7 @@
 
 <style>
 	.page-container {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
