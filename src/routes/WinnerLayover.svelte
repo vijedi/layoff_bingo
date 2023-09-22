@@ -1,4 +1,5 @@
 <script lang="ts">
+	import WinnerTileScroller from './WinnerTileScroller.svelte';
 	export let winningTiles: Tile[];
 </script>
 
@@ -10,6 +11,7 @@
 			people have had the same emotions and heard the same words (cuz you just matched them!).
 		</p>
 		<h3>The clichés matched this round:</h3>
+		<WinnerTileScroller {winningTiles} />
 	</div>
 </div>
 
@@ -27,10 +29,15 @@
 	}
 
 	.winner-container {
-		background: white;
-		border: 8px solid #ee8c11aa;
+		background: #f9a9f4;
+		border: 8px solid #ee11e1;
 		border-radius: 8px;
 		padding: 1em;
 		max-width: 480px;
+		box-shadow: 8px 8px 8px #00000088;
+	}
+
+	h1 {
+		text-align: center;
 	}
 </style>

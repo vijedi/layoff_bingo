@@ -14,7 +14,6 @@
 		}
 
 		winningTiles = checkIfWinner(board);
-		console.log(winningTiles);
 		if (winningTiles) {
 			displayWinnerDialog = true;
 			getBodyClassList().add('no-scroll');
