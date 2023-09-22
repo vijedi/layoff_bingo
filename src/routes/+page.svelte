@@ -2,7 +2,7 @@
 	import Tile from './Tile.svelte';
 	import WinnerLayover from './WinnerLayover.svelte';
 	import { generateBoard, checkIfWinner } from '$lib/board';
-	import { getBodyClassList } from '$lib/domUtil';
+	import { getBodyClassList } from '$lib/dom_util';
 
 	let displayWinnerDialog = false;
 	let winningTiles = [];

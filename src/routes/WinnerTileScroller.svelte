@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Tile } from '$lib/board_types';
+	import TileQuoteCard from './TileQuoteCard.svelte';
 	export let winningTiles: Tile[];
 	let cardIndex = 0;
 
@@ -25,12 +26,8 @@
 		<button type="button" on:click={moveForward}>Next</button>
 	</div>
 	{#each winningTiles as tile, i}
-		<div class="card" class:visible={cardIndex === i}>
-			<div class="quote-container">
-				<blockquote>
-					{tile.cliche.text}
-				</blockquote>
-			</div>
+		<div class:visible={cardIndex === i}>
+			<TileQuoteCard {tile} />
 		</div>
 	{/each}
 </div>
@@ -45,37 +42,7 @@
 		text-align: center;
 	}
 
-	.card {
-		display: none;
-		border-radius: 6px;
-		box-shadow: 2px 2px 5px #00000088;
-		padding: 0.5em;
-        background: #e1e1e1;
-	}
-
-    .quote-container {
-        border-bottom: 1px solid #00000088;
-    }
-
-	.card blockquote {
-		position: relative;
-		letter-spacing: 0.03em;
-		margin-bottom: 0.5rem;
-        font-size: 1.1em;
-	}
-
-    .card blockquote:before {
-        content: "“";
-        position: absolute;
-        left: -.7em;
-    }
-    
-    .card blockquote:after {
-        content: "”";
-        margin-right: -1rem;
-    }
-
-	.card.visible {
+	.visible {
 		display: block;
 	}
 </style>

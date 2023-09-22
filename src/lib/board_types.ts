@@ -1,7 +1,7 @@
 export interface Cliche {
 	id: string;
 	text: string;
-	layoffIds?: string[];
+	layoffIds: string[];
 }
 
 export interface Layoff {
@@ -13,6 +13,7 @@ export interface Layoff {
 
 export interface Company {
 	companyId: string;
+	name: string;
 	description: string;
 }
 

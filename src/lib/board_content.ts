@@ -1,79 +1,94 @@
 import type { Cliche, Layoff, Company } from './board_types';
 
-export const companies: Company[] = [
+export const COMPANIES: Company[] = [
 	{
 		companyId: 'evernote',
+		name: 'Evernote',
 		description:
 			'Evernote was one of the first Silicon Valley "Unicorns" (private companies that were worth more than $1bn). I used to be a paid user of their subscription services, but like most others started finding it less useful as time went on and stopped paying. A darling no more, Evernote has been in a steady decline.'
 	},
 	{
 		companyId: 'headspace',
+		name: 'Headspace',
 		description: 'Headspace is an licensed medical provider and online mental health platform.'
 	},
 	{
 		companyId: 'lyft',
+		name: 'Lyft',
 		description:
 			'Touted as a friendly Uber, Lyft has always been second fiddle in the driver gig space. Though they have expanded into other forms of mobility, they continue to be a low margin business that relies on investment to sustain operations.'
 	},
 	{
 		companyId: 'meta',
+		name: 'Meta',
 		description:
 			"Started at Harvard by Mark Zuckerberg to creep on co-eds then work out his Machiavellian desires, Facebook is now the largest social network in the world far eclipsing Nextdoor's ability to  amplify the racist ramblings of angry old people. Exceeding its original vision, Facebook has created platforms for younger, attention starved influencers (Instagram) and  an even better way for old people to spread misinformation and racist rants (Whatsapp)."
 	},
 	{
 		companyId: 'ea',
+		name: 'Electronic Arts',
 		description:
 			'An early pioneer in home video gaming, Electronic Arts has had the most success recently by offering the same game with updated stats year after year through its sport franchises. Not satisfied with this mechanism of "extracting value" the company has recently moved to add as many microtransactions as possible to further blur the lines between gaming and work.'
 	},
 	{
 		companyId: 'lucid',
+		name: 'Lucid Motors',
 		description:
 			'Another EV car startup, Lucid started delivering their high-priced, high-powered cars in 2022. Plagued supply chain issues and demand, output has been far lower than expectations thus far.'
 	},
 	{
 		companyId: 'indeed',
+		name: 'Indeed',
 		description:
 			'Indeed is a jobsearch engine that aggregates information from multiple job postings across the web.'
 	},
 	{
 		companyId: 'glassdoor',
+		name: 'Glassdoor',
 		description:
 			'Glassdoor gives the opportunity for employees to rate their employer. Purportedly for allowing for good candidate decisions, the site is mostly used by kool-aid drinkers to  profess their company love while their disgruntled counterparts get the opportunity to vent.'
 	},
 	{
 		companyId: 'amazon',
+		name: 'Amazon',
 		description:
 			'One of the biggest employers in the world, Amazon has long since moved from being just the everything store to an everything company.'
 	},
 	{
 		companyId: 'atlassian',
+		name: 'Atlassian',
 		description:
 			'Atlassian is one of the leaders in software collaboration products and rode the Agile wave especially well with Jira and Confluence.'
 	},
 	{
 		companyId: 'twitter',
+		name: 'X (formerly Twitter)',
 		description:
 			'Once the social media darling of the journalist and political world, the takeover by a rich man-child turned it into the online equivalent of Fox News.'
 	},
 	{
 		companyId: 'rapid7',
+		name: 'Rapid7',
 		description: 'TBD'
 	},
 	{
 		companyId: 'hackerone',
+		name: 'Hackerone',
 		description: 'TBD'
 	},
 	{
 		companyId: 'planet',
+		name: 'Planet',
 		description: 'TBD'
 	},
 	{
 		companyId: 'niantic',
+		name: 'Niantic',
 		description: 'TBD'
 	}
 ];
 
-export const layoffs: Layoff[] = [
+export const LAYOFFS: Layoff[] = [
 	{
 		layoffId: 'evernote_07_23',
 		companyId: 'evernote',
@@ -177,7 +192,12 @@ export const layoffs: Layoff[] = [
 	}
 ];
 
-export const cliches: Cliche[] = [
+export const FREE_SPACE = Object.freeze({
+	id: 'free',
+	text: 'Free Time'
+});
+
+export const CLICHES: Cliche[] = [
 	{
 		id: '000',
 		text: 'boost operational efficiency',

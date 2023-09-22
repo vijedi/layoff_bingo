@@ -1,5 +1,5 @@
 import type { Tile, Board } from './board_types';
-import { cliches } from './board_content';
+import { CLICHES } from './board_content';
 
 const GRID_SIZE = 5;
 const GRID_MIDDLE = Math.floor(GRID_SIZE / 2);
@@ -10,7 +10,7 @@ const GRID_MIDDLE = Math.floor(GRID_SIZE / 2);
  */
 export function generateBoard(): Board {
 	// We are going to manipulate this list so we need to make a copy
-	const candidates = [...cliches];
+	const candidates = [...CLICHES];
 
 	const tiles: Tile[][] = [[], [], [], [], []];
 	for (let row = 0; row < GRID_SIZE; row++) {
