@@ -33,6 +33,7 @@ export function generateBoard(): Board {
 					quote: cliche.text,
 					quoteAttribution: `${company.name}, ${layoffDate}`,
 					totalLayoffs: cliche.layoffIds.length,
+					layoff: layoffInfo.layoff,
 					company
 				});
 				candidates.splice(candidateIndex, 1);

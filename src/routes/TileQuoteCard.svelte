@@ -9,10 +9,20 @@
 		<blockquote>
 			{tile.quote}
 		</blockquote>
-		<div class="quote-author">&mdash; {tile.quoteAttribution}</div>
+		<div class="quote-author">
+			&mdash; {tile.quoteAttribution}
+			{#if tile.totalLayoffs > 0} and {tile.totalLayoffs} more{/if}
+		</div>
 	</div>
+	{#if tile.company}
+		<div class="company-container">
+			<h4>About this layoff</h4>
+			<p class="about">{tile.layoff.description}</p>
 
-	<div class="company-container">TODO</div>
+			<h4>About {tile.company.name}</h4>
+			<p class="about">{tile.company.description}</p>
+		</div>
+	{/if}
 </div>
 
 <style>

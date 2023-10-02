@@ -1,8 +1,20 @@
 <script lang="ts">
 	import type { Tile } from '$lib/board_types';
+	import { onMount } from 'svelte';
 	import TileQuoteCard from './TileQuoteCard.svelte';
+
 	export let winningTiles: Tile[];
 	let cardIndex = 0;
+	let cardsContainer;
+	let maxHeight = 0;
+
+	function adjustHeight() {
+		if (cardsContainer) {
+			cardsContainer.style.height = `${maxHeight}px`;
+		}
+	}
+
+	onMount(adjustHeight);
 
 	const moveForward = () => {
 		cardIndex++;
@@ -17,6 +29,13 @@
 			cardIndex = winningTiles.length - 1;
 		}
 	};
+
+	const setMaxHeight = (node) => {
+		const max = Math.max(node.offsetHeight, maxHeight);
+		if (max !== maxHeight) {
+			maxHeight = max;
+		}
+	};
 </script>
 
 <div class="card-list">
@@ -25,16 +44,21 @@
 		<div>{cardIndex + 1} of {winningTiles.length}</div>
 		<button type="button" on:click={moveForward}>Next &raquo;</button>
 	</div>
-	{#each winningTiles as tile, i}
-		<div class="card-container" class:visible={cardIndex === i}>
-			<TileQuoteCard {tile} />
-		</div>
-	{/each}
+	<div class="cards-container" bind:this={cardsContainer}>
+		{#each winningTiles as tile, i}
+			<div class="card-container" class:visible={cardIndex === i} use:setMaxHeight>
+				<TileQuoteCard {tile} />
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style>
 	button {
 		text-transform: uppercase;
+	}
+	.card-list {
+		position: relative;
 	}
 	.card-nav {
 		display: flex;
@@ -45,12 +69,21 @@
 		text-align: center;
 	}
 
+	.cards-container {
+		position: relative;
+		top: 0;
+		left: 0;
+	}
 	.card-container {
-		display: none;
 		padding-top: 8px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		visibility: hidden;
 	}
 
 	.visible {
-		display: block;
+		visibility: visible;
 	}
 </style>

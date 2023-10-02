@@ -35,6 +35,7 @@
 		padding: 1em;
 		max-width: 480px;
 		box-shadow: 8px 8px 8px #00000088;
+		position: relative;
 	}
 
 	h1 {
