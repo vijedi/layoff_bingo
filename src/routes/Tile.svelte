@@ -15,7 +15,7 @@
 
 <button type="button" on:click={toggle} class:selected>
 	<div class="button-content">
-		{tile.cliche.text}
+		{tile.quote}
 	</div>
 </button>
 

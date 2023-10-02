@@ -194,7 +194,15 @@ export const LAYOFFS: Layoff[] = [
 
 export const FREE_SPACE = Object.freeze({
 	id: 'free',
-	text: 'Free Time'
+	quote: 'Free Time',
+	quoteAttribution: 'Whenever',
+	totalLayoffs: 0,
+	company: {
+		companyId: 'individual',
+		name: 'Time for yourself',
+		description:
+			"The silver lining of a layoff is that you get some of your most productive hours back. Hopefully it's enough to offset the stress and uncertainty."
+	}
 });
 
 export const CLICHES: Cliche[] = [

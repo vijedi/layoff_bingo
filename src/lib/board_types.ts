@@ -18,12 +18,14 @@ export interface Company {
 }
 
 export interface Tile {
+	readOnly: boolean;
 	selected: boolean;
-	cliche: Cliche;
+	quote: string;
+	quoteAttribution: string;
+	totalLayoffs: number;
+	company?: Company;
 }
 
 export interface Board {
 	tiles: Tile[][];
-	layoffs: Map<string, Layoff>;
-	companies: Map<string, Layoff>;
 }

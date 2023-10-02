@@ -2,23 +2,21 @@
 	import type { Tile } from '$lib/board_types';
 	import { getLayoffInfo, parseLayoffDate } from '$lib/content_util';
 	export let tile: Tile;
-
-	const layoffInfo = getLayoffInfo(tile.cliche);
-	const layoffDate = parseLayoffDate(layoffInfo.layoff.layoffId);
 </script>
 
 <div class="card">
 	<div class="quote-container">
 		<blockquote>
-			{tile.cliche.text}
+			{tile.quote}
 		</blockquote>
-		<div class="quote-author">&emdash; {layoffInfo.company.name}, {layoffDate}</div>
+		<div class="quote-author">&mdash; {tile.quoteAttribution}</div>
 	</div>
+
+	<div class="company-container">TODO</div>
 </div>
 
 <style>
 	.card {
-		display: none;
 		border-radius: 6px;
 		box-shadow: 2px 2px 5px #00000088;
 		padding: 0.5em;
@@ -26,24 +24,31 @@
 	}
 
 	.quote-container {
+		padding-bottom: 0.25em;
 		border-bottom: 1px solid #00000088;
+		margin-bottom: 0.25em;
 	}
 
 	.card blockquote {
 		position: relative;
 		letter-spacing: 0.03em;
-		margin-bottom: 0.5rem;
+		padding: 0;
+		margin: 0.5rem;
 		font-size: 1.1em;
 	}
 
 	.card blockquote:before {
 		content: '“';
 		position: absolute;
-		left: -0.7em;
+		left: -0.5em;
 	}
 
 	.card blockquote:after {
 		content: '”';
 		margin-right: -1rem;
+	}
+
+	.card .quote-author {
+		font-size: 0.8em;
 	}
 </style>

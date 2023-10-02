@@ -1,5 +1,6 @@
 import type { Tile, Board } from './board_types';
-import { CLICHES } from './board_content';
+import { CLICHES, FREE_SPACE } from './board_content';
+import { getLayoffInfo, parseLayoffDate } from '$lib/content_util';
 
 const GRID_SIZE = 5;
 const GRID_MIDDLE = Math.floor(GRID_SIZE / 2);
@@ -20,9 +21,19 @@ export function generateBoard(): Board {
 				tiles[row].push(generateFreeSpace());
 			} else {
 				const candidateIndex = Math.floor(Math.random() * candidates.length);
+				const cliche = candidates[candidateIndex];
+
+				const layoffInfo = getLayoffInfo(cliche);
+				const layoffDate = parseLayoffDate(layoffInfo.layoff.layoffId);
+				const company = layoffInfo.company;
+
 				tiles[row].push({
-					cliche: candidates[candidateIndex],
-					selected: false
+					selected: false,
+					readOnly: false,
+					quote: cliche.text,
+					quoteAttribution: `${company.name}, ${layoffDate}`,
+					totalLayoffs: cliche.layoffIds.length,
+					company
 				});
 				candidates.splice(candidateIndex, 1);
 			}
@@ -39,11 +50,9 @@ export function generateBoard(): Board {
  */
 function generateFreeSpace(): Tile {
 	return {
-		cliche: {
-			id: 'free',
-			text: 'Free Time'
-		},
-		selected: true
+		...FREE_SPACE,
+		selected: true,
+		readOnly: true
 	};
 }
 
