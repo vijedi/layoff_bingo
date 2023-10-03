@@ -24,6 +24,7 @@ export interface Tile {
 	quoteAttribution: string;
 	totalLayoffs: number;
 	company?: Company;
+	layoff?: Layoff;
 }
 
 export interface Board {

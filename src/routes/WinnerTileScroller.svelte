@@ -56,15 +56,30 @@
 <style>
 	button {
 		text-transform: uppercase;
+		background: #ee11e1;
+		border: 2px solid #ee11e1;
+		border-radius: 2px;
+		color: white;
+		font-weight: bold;
+		padding: 0.3em 1em;
+		cursor: pointer;
+		transition: all 0.4s ease-out;
 	}
+
+	button:hover {
+		letter-spacing: 1px;
+	}
+
 	.card-list {
 		position: relative;
 	}
+
 	.card-nav {
 		display: flex;
 		width: 100%;
 	}
-	.card-nav div {
+
+	.card-nav > div {
 		flex-grow: 1;
 		text-align: center;
 	}
@@ -74,6 +89,7 @@
 		top: 0;
 		left: 0;
 	}
+
 	.card-container {
 		padding-top: 8px;
 		position: absolute;
