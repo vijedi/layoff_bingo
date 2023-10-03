@@ -6,7 +6,9 @@
 
 	let displayWinnerDialog = false;
 	let winningTiles = [];
+
 	const board = generateBoard();
+
 	const handleSelection = (event) => {
 		if (displayWinnerDialog) {
 			// nothing to do, this has already been evaluated
@@ -24,6 +26,16 @@
 		displayWinnerDialog = false;
 		getBodyClassList().remove('no-scroll');
 	};
+
+	const closeOnEsc = (event) => {
+		if (event.repeat || !displayWinnerDialog) {
+			return;
+		}
+
+		if (event.key === 'Escape') {
+			hideWinner();
+		}
+	};
 </script>
 
 <div class="page-container">
@@ -40,8 +52,10 @@
 </div>
 
 {#if displayWinnerDialog}
-	<WinnerLayover {winningTiles} />
+	<WinnerLayover {winningTiles} on:layoverRequestsClose={hideWinner} />
 {/if}
+
+<svelte:window on:keyup={closeOnEsc} />
 
 <style>
 	.page-container {
