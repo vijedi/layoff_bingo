@@ -43,7 +43,7 @@
 		top: 0;
 		right: 0;
 		cursor: pointer;
-		color: #666;
+		color: #ee11e1;
 		transition: all 0.3s ease-out;
 	}
 

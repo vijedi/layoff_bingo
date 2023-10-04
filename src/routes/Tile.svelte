@@ -28,6 +28,7 @@
 		height: 100%;
 		width: 100%;
 		cursor: pointer;
+		text-transform: uppercase;
 	}
 
 	button.selected .button-content {

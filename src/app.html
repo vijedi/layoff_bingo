@@ -9,15 +9,101 @@
 				padding: 0;
 				margin: 0;
 				font-family: sans-serif;
+				color: #150c03;
+				background: url(./wood_background.jpg) no-repeat;
+				background-size: cover;
 			}
 
 			body.no-scroll {
 				overflow: hidden;
 			}
+
+			h1 {
+				margin: 0;
+			}
+
+			a,
+			a:visited {
+				color: #774609;
+			}
+
+			.page-container {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin: 20px auto;
+				background: url(./paper_background.jpg) no-repeat;
+				background-size: cover;
+				font-family: sans-serif;
+				width: calc(100vmin - 20px);
+				max-width: 800px;
+				padding: 40px 20px 0 20px;
+				box-shadow: 8px 6px 14px #000;
+			}
+
+			.intro {
+				margin-bottom: 2em;
+			}
+
+			.footer {
+				text-align: center;
+				padding: 36px 0 12px 0;
+				font-size: 0.8em;
+			}
+
+			.footer p {
+				margin: 0.1em;
+			}
 		</style>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
+		<div class="page-container">
+			<h1>Layoff Bingo</h1>
+			<div class="intro">
+				<p>
+					In our era layoffs are just a fact of life. Whether it's to bring larger profits
+					or stave off imminent collapse, real people are going to be impacted and have to
+					deal with the stress of finding new work and taking care of themselves and their
+					families.
+				</p>
+				<p>
+					Before the stress, though, why not engage in some gallows humor and see just how
+					many layoff clichés your leader is going to use. Share with your colleagues,
+					generate your board, and the first one LETGO wins!
+				</p>
+			</div>
+			<div style="display: contents">%sveltekit.body%</div>
+			<div class="footer">
+				<p>Produced on a whim by <a href="https://tejusparikh.com">Tejus Parikh</a></p>
+				<p>Board code and content &copy; 2023 Tejus Parikh</p>
+				<p>
+					Paper texture photo
+					<a
+						href="https://unsplash.com/@kiwihug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+						>Kiwihug</a
+					>
+					on
+					<a
+						href="https://unsplash.com/photos/zGZYQQVmXw0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+						>Unsplash</a
+					>
+				</p>
+				<p>
+					Wood texture photo by
+					<a
+						href="https://unsplash.com/@jjbart7?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+						>Joshua Bartell</a
+					>
+					on
+					<a
+						href="https://unsplash.com/photos/6vvIBTvL90A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+						>Unsplash</a
+					>
+				</p>
+			</div>
+		</div>
 	</body>
 </html>
