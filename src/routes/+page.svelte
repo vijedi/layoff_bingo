@@ -76,7 +76,7 @@
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		border: 2px solid #ee8c11aa;
+		border: 2px solid rgba(var(--primary-highlight-color), 0.8);
 		width: 100%;
 	}
 
@@ -86,7 +86,7 @@
 
 	li {
 		aspect-ratio: 1 / 1;
-		border: 2px solid #ee8c11aa;
+		border: 2px solid rgba(var(--primary-highlight-color), 0.8);
 	}
 
 	ul.title {
@@ -97,7 +97,7 @@
 		aspect-ratio: auto;
 		border: 0;
 		text-align: center;
-		color: #ee11e1;
+		color: rgb(var(--secondary-highlight-color));
 		font-weight: bold;
 		font-size: 3em;
 	}

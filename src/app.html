@@ -5,11 +5,19 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<style type="text/css">
+			:root {
+				--main-color: 21, 12, 3;
+				--text-highlight: 119, 70, 9;
+				--primary-highlight-color: 238, 140, 17;
+				--secondary-highlight-color: 238, 17, 225;
+				--secondary-highlight-color-lighter: 249, 169, 244;
+			}
+
 			body {
 				padding: 0;
 				margin: 0;
 				font-family: sans-serif;
-				color: #150c03;
+				color: rgb(var(--main-color));
 				background: url(./wood_background.jpg) no-repeat;
 				background-size: cover;
 				min-height: 100vh;
@@ -25,7 +33,7 @@
 
 			a,
 			a:visited {
-				color: #774609;
+				color: rgb(var(--text-highlight));
 			}
 
 			.page-container {
@@ -81,8 +89,10 @@
 			</div>
 			<div style="display: contents">%sveltekit.body%</div>
 			<div class="footer">
-				<p>Produced on a whim by <a href="https://tejusparikh.com">Tejus Parikh</a></p>
-				<p>Board code and content &copy; 2023 Tejus Parikh</p>
+				<p>
+					Produced on a whim by <a href="https://tejusparikh.com">Tejus Parikh</a>. Board
+					code and content &copy; 2023 Tejus Parikh
+				</p>
 				<p>
 					Paper texture photo
 					<a

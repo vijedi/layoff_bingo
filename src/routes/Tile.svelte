@@ -32,8 +32,8 @@
 	}
 
 	button.selected .button-content {
-		background: #ee8c1188;
-		border-color: #ee8c11;
+		background: rgba(var(--primary-highlight-color), 0.5);
+		border-color: rgb(var(--primary-highlight-color));
 	}
 
 	.button-content {

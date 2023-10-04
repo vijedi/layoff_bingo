@@ -56,8 +56,8 @@
 <style>
 	button {
 		text-transform: uppercase;
-		background: #ee11e1;
-		border: 2px solid #ee11e1;
+		background: rgb(var(--secondary-highlight-color));
+		border: 2px solid rgb(var(--secondary-highlight-color));
 		border-radius: 2px;
 		color: white;
 		font-weight: bold;

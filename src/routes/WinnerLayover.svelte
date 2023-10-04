@@ -43,7 +43,7 @@
 		top: 0;
 		right: 0;
 		cursor: pointer;
-		color: #ee11e1;
+		color: rgb(var(--secondary-highlight-color));
 		transition: all 0.3s ease-out;
 	}
 
@@ -71,12 +71,12 @@
 	}
 
 	.winner-container {
-		background: #f9a9f4;
-		border: 8px solid #ee11e1;
+		background: rgb(var(--secondary-highlight-color-lighter));
+		border: 8px solid rgb(var(--secondary-highlight-color));
 		border-radius: 8px;
 		padding: 1em;
 		max-width: 480px;
-		box-shadow: 8px 8px 8px #00000088;
+		box-shadow: 8px 8px 8px #00000000;
 		position: relative;
 	}
 
