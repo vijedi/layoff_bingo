@@ -12,6 +12,7 @@
 				color: #150c03;
 				background: url(./wood_background.jpg) no-repeat;
 				background-size: cover;
+				min-height: 100vh;
 			}
 
 			body.no-scroll {
@@ -31,19 +32,22 @@
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
 				margin: 20px auto;
 				background: url(./paper_background.jpg) no-repeat;
 				background-size: cover;
 				font-family: sans-serif;
 				width: calc(100vmin - 20px);
+				min-height: calc(100vh - 100px);
 				max-width: 800px;
 				padding: 40px 20px 0 20px;
 				box-shadow: 8px 6px 14px #000;
 			}
 
-			.intro {
+			.page-container h1 {
+				text-align: center;
+			}
+
+			.page-container .intro {
 				margin-bottom: 2em;
 			}
 

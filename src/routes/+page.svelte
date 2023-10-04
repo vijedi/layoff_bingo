@@ -1,13 +1,14 @@
 <script lang="ts">
 	import Tile from './Tile.svelte';
 	import WinnerLayover from './WinnerLayover.svelte';
+	import GenerateButton from './GenerateButton.svelte';
 	import { generateBoard, checkIfWinner } from '$lib/board';
 	import { getBodyClassList } from '$lib/dom_util';
 
 	let displayWinnerDialog = false;
 	let winningTiles = [];
 
-	const board = generateBoard();
+	let board = null;
 
 	const handleSelection = (event) => {
 		if (displayWinnerDialog) {
@@ -39,19 +40,28 @@
 </script>
 
 <ul class="title">
-	<li class="title">L</li>
-	<li class="title">E</li>
-	<li class="title">T</li>
-	<li class="title">G</li>
-	<li class="title">O</li>
+	<li>L</li>
+	<li>E</li>
+	<li>T</li>
+	<li>G</li>
+	<li>O</li>
 </ul>
-<ul class="board">
-	{#each board.tiles as row}
-		{#each row as tile}
-			<li><Tile {tile} on:tileSelected={handleSelection} /></li>
+
+{#if board}
+	<ul class="board">
+		{#each board.tiles as row}
+			{#each row as tile}
+				<li><Tile {tile} on:tileSelected={handleSelection} /></li>
+			{/each}
 		{/each}
-	{/each}
-</ul>
+	</ul>
+{:else}
+	<ul class="board empty">
+		<li>
+			<GenerateButton />
+		</li>
+	</ul>
+{/if}
 
 {#if displayWinnerDialog}
 	<WinnerLayover {winningTiles} on:layoverRequestsClose={hideWinner} />
@@ -68,6 +78,10 @@
 		grid-template-columns: repeat(5, 1fr);
 		border: 2px solid #ee8c11aa;
 		width: 100%;
+	}
+
+	ul.board.empty {
+		grid-template-columns: repeat(1, 1fr);
 	}
 
 	li {
