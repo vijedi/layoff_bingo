@@ -39,16 +39,23 @@
 </script>
 
 <div class="page-container">
-	<h1 class="title">LETGO</h1>
-	<div class="board-container">
-		<ul class="board">
-			{#each board.tiles as row}
-				{#each row as tile}
-					<li><Tile {tile} on:tileSelected={handleSelection} /></li>
-				{/each}
+	<ul class="title">
+		<li class="title">L</li>
+		<li class="title">E</li>
+		<li class="title">T</li>
+		<li class="title">G</li>
+		<li class="title">O</li>
+	</ul>
+	<ul class="board">
+		{#each board.tiles as row}
+			{#each row as tile}
+				<li><Tile {tile} on:tileSelected={handleSelection} /></li>
 			{/each}
-		</ul>
-	</div>
+		{/each}
+	</ul>
+</div>
+<div class="footer">
+	&copy; 2023. Produced on a whim by <a href="https://tejusparikh.com">Tejus Parikh</a>.
 </div>
 
 {#if displayWinnerDialog}
@@ -65,11 +72,14 @@
 		justify-content: center;
 		align-items: center;
 		margin: auto;
+		background: url(./paper_background.jpg) no-repeat;
+		background-size: cover;
+		font-family: sans-serif;
+		width: calc(100vmin - 20px);
+		padding: 40px 20px 0 20px;
+		box-shadow: 1px 1px 14px #88888888;
 	}
 
-	.board-container {
-		width: calc(100vmin - 20px);
-	}
 	ul {
 		list-style: none;
 		margin: 0;
@@ -77,6 +87,7 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		border: 2px solid #ee8c11aa;
+		width: 100%;
 	}
 
 	li {
@@ -84,7 +95,22 @@
 		border: 2px solid #ee8c11aa;
 	}
 
-	h1 {
+	ul.title {
+		border: 0;
+	}
+
+	ul.title li {
+		aspect-ratio: auto;
+		border: 0;
+		text-align: center;
 		color: #ee11e1;
+		font-weight: bold;
+		font-size: 3em;
+	}
+
+	.footer {
+		text-align: center;
+		color: #333;
+		padding: 12px 0;
 	}
 </style>
