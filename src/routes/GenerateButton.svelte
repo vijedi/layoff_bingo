@@ -8,7 +8,7 @@
 </script>
 
 <div class="button-container">
-	<button type="button" on:click={generate}>Generate Board </button>
+	<button type="button" on:click={generate}>Generate Board</button>
 </div>
 
 <style>
@@ -21,12 +21,19 @@
 	}
 
 	button {
-		background: #ee8c11;
+		background: rgb(var(--primary-highlight-color));
 		border: 0;
 		padding: 1em;
 		font-weight: bold;
 		color: white;
 		cursor: pointer;
 		text-transform: uppercase;
+		border-radius: 4px;
+		padding: 1.5em;
+		transition: all 0.4s ease-out;
+	}
+
+	button:hover {
+		letter-spacing: 1px;
 	}
 </style>

@@ -37,6 +37,10 @@
 			hideWinner();
 		}
 	};
+
+	const doGenerate = () => {
+		board = generateBoard();
+	};
 </script>
 
 <ul class="title">
@@ -58,7 +62,7 @@
 {:else}
 	<ul class="board empty">
 		<li>
-			<GenerateButton />
+			<GenerateButton on:generateBoard={doGenerate} />
 		</li>
 	</ul>
 {/if}
