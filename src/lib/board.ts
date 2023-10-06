@@ -1,3 +1,4 @@
+import seedrandom from 'seedrandom';
 import type { Tile, Board } from './board_types';
 import { CLICHES, FREE_SPACE } from './board_content';
 import { getLayoffInfo, parseLayoffDate } from '$lib/content_util';
@@ -9,9 +10,11 @@ const GRID_MIDDLE = Math.floor(GRID_SIZE / 2);
  * Generates a board from the potential candidates
  * @returns a 5x5 matrix of board squares
  */
-export function generateBoard(): Board {
+export function generateBoard(seed: number): Board {
 	// We are going to manipulate this list so we need to make a copy
 	const candidates = [...CLICHES];
+
+	const rng = seedrandom(seed);
 
 	const tiles: Tile[][] = [[], [], [], [], []];
 	for (let row = 0; row < GRID_SIZE; row++) {
@@ -20,7 +23,7 @@ export function generateBoard(): Board {
 			if (col == GRID_MIDDLE && row == GRID_MIDDLE) {
 				tiles[row].push(generateFreeSpace());
 			} else {
-				const candidateIndex = Math.floor(Math.random() * candidates.length);
+				const candidateIndex = Math.floor(rng() * candidates.length);
 				const cliche = candidates[candidateIndex];
 
 				const layoffInfo = getLayoffInfo(cliche);
@@ -28,6 +31,7 @@ export function generateBoard(): Board {
 				const company = layoffInfo.company;
 
 				tiles[row].push({
+					id: cliche.id,
 					selected: false,
 					readOnly: false,
 					quote: cliche.text,
@@ -70,6 +74,12 @@ export function checkIfWinner(board: Board): Tile[] | null {
 	// more memory and takes more time to write. This should be trivially quick and this
 	// approach is relatively easy to understand on a revisit.
 	return checkRows(tiles) || checkColumns(tiles) || checkDiagonals(tiles);
+}
+
+export function getSelectedIds(board: Board): string[] {
+	return board.tiles.flatMap((outer) =>
+		outer.filter((inner) => inner.selected).map((selected) => selected.id)
+	);
 }
 
 function checkIterate(getTile: (outer: number, inner: number) => Tile, outer?: number) {

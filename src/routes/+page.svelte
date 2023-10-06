@@ -1,14 +1,20 @@
 <script lang="ts">
+	import seedrandom from 'seedrandom';
 	import Tile from './Tile.svelte';
 	import WinnerLayover from './WinnerLayover.svelte';
 	import GenerateButton from './GenerateButton.svelte';
-	import { generateBoard, checkIfWinner } from '$lib/board';
+	import { generateBoard, checkIfWinner, getSelectedIds } from '$lib/board';
 	import { getBodyClassList } from '$lib/dom_util';
+	import { parseBoardState, saveBoardState } from '$lib/board_state_util';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+
+	const boardState = parseBoardState($page);
+	// If there is already a seed, go straight to creating a board
+	let board = boardState.seed ? generateBoard(boardState.seed) : null;
 
 	let displayWinnerDialog = false;
 	let winningTiles = [];
-
-	let board = null;
 
 	const handleSelection = (event) => {
 		if (displayWinnerDialog) {
@@ -16,7 +22,9 @@
 			return;
 		}
 
+		boardState.selected = getSelectedIds(board);
 		winningTiles = checkIfWinner(board);
+		saveBoardState($page, boardState);
 		if (winningTiles) {
 			displayWinnerDialog = true;
 			getBodyClassList().add('no-scroll');
@@ -39,7 +47,11 @@
 	};
 
 	const doGenerate = () => {
-		board = generateBoard();
+		if (!boardState.seed) {
+			boardState.seed = seedrandom()();
+			saveBoardState($page, boardState);
+			board = generateBoard(boardState.seed);
+		}
 	};
 </script>
 

@@ -18,6 +18,7 @@ export interface Company {
 }
 
 export interface Tile {
+	id: string;
 	readOnly: boolean;
 	selected: boolean;
 	quote: string;
@@ -29,4 +30,11 @@ export interface Tile {
 
 export interface Board {
 	tiles: Tile[][];
+}
+
+export interface BoardState {
+	selected: string[];
+	seed?: number;
+	readOnlyMode?: boolean;
+	winnerName?: string;
 }
