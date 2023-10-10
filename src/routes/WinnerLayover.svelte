@@ -1,7 +1,9 @@
 <script lang="ts">
 	import WinnerTileScroller from './WinnerTileScroller.svelte';
+	import ShareLink from './ShareLink.svelte';
 	import { createEventDispatcher } from 'svelte';
 
+	export let boardState: boardState;
 	export let winningTiles: Tile[];
 
 	const dispatch = createEventDispatcher();
@@ -13,17 +15,22 @@
 	function stopPropagation(event) {
 		event.stopPropagation();
 	}
+
+	function noop() {
+		// keypresses are handled by a global handler
+	}
 </script>
 
-<div class="winner-layover" on:click={close}>
-	<div class="winner-container" on:click={stopPropagation}>
+<div class="winner-layover" on:click={close} on:keyup={noop} role="region">
+	<div class="winner-container" on:click={stopPropagation} on:keyup={noop} role="dialog">
 		<button class="close" type="button" on:click={close} />
 		<h1>LET GO!</h1>
 		<p>
 			Layoffs are tough but you can take solace in the fact that you are not alone. Countless
-			people have had the same emotions and heard the same words (cuz you just matched them!).
+			people have had the same emotions and you just proved they heard the same words!
 		</p>
-		<h3>The clichés matched this round:</h3>
+		<ShareLink {boardState} />
+		<h3>This board matched</h3>
 		<WinnerTileScroller {winningTiles} />
 	</div>
 </div>
@@ -80,7 +87,12 @@
 		position: relative;
 	}
 
-	h1 {
+	h1,
+	h3 {
 		text-align: center;
+	}
+
+	h3 {
+		margin-bottom: 0.25em;
 	}
 </style>

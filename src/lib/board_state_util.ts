@@ -13,8 +13,12 @@ export function parseBoardState($page: SveltePage): BoardState {
 	return { selected: [] };
 }
 
+export function encodeBoardState(state: BoardState): string {
+	return encodeURI(JSON.stringify(state));
+}
+
 export function saveBoardState($page: SveltePage, state: BoardState): void {
-	const encoded = encodeURI(JSON.stringify(state));
+	const encoded = encodeBoardState(state);
 	$page.url.searchParams.set('state', encoded);
 	history.replaceState(history.state, '', $page.url);
 }

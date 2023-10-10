@@ -25,6 +25,7 @@
 		boardState.selected = getSelectedIds(board);
 		winningTiles = checkIfWinner(board);
 		saveBoardState($page, boardState);
+
 		if (winningTiles) {
 			displayWinnerDialog = true;
 			getBodyClassList().add('no-scroll');
@@ -80,7 +81,7 @@
 {/if}
 
 {#if displayWinnerDialog}
-	<WinnerLayover {winningTiles} on:layoverRequestsClose={hideWinner} />
+	<WinnerLayover {winningTiles} {boardState} on:layoverRequestsClose={hideWinner} />
 {/if}
 
 <svelte:window on:keyup={closeOnEsc} />

@@ -36,5 +36,5 @@ export interface BoardState {
 	selected: string[];
 	seed?: number;
 	readOnlyMode?: boolean;
-	winnerName?: string;
+	playerName?: string;
 }
