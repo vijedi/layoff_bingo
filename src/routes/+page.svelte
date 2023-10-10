@@ -1,8 +1,8 @@
 <script lang="ts">
 	import seedrandom from 'seedrandom';
-	import Tile from './Tile.svelte';
-	import WinnerLayover from './WinnerLayover.svelte';
-	import GenerateButton from './GenerateButton.svelte';
+	import Tile from './page/Tile.svelte';
+	import WinnerLayover from './page/WinnerLayover.svelte';
+	import GenerateButton from './page/GenerateButton.svelte';
 	import { generateBoard, checkIfWinner, getSelectedIds } from '$lib/board';
 	import { getBodyClassList } from '$lib/dom_util';
 	import { parseBoardState, saveBoardState } from '$lib/board_state_util';

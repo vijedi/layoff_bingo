@@ -2,7 +2,7 @@
 	import type { Tile } from '$lib/board_types';
 	import { onMount } from 'svelte';
 	import TileQuoteCard from './TileQuoteCard.svelte';
-	import Button from './Button.svelte';
+	import Button from '$lib/ds/Button.svelte';
 
 	export let winningTiles: Tile[];
 	let cardIndex = 0;
