@@ -7,13 +7,19 @@
 	const dispatch = createEventDispatcher();
 
 	$: selected = tile.selected;
+	$: readOnly = tile.readOnly;
+
 	function toggle() {
+		if (tile.readOnly) {
+			return;
+		}
+
 		tile.selected = !tile.selected;
 		dispatch('tileSelected', { tile });
 	}
 </script>
 
-<button type="button" on:click={toggle} class:selected>
+<button type="button" on:click={toggle} class:selected class:readOnly>
 	<div class="button-content">
 		{tile.quote}
 	</div>
@@ -34,6 +40,10 @@
 	button.selected .button-content {
 		background: rgba(var(--primary-highlight-color), 0.5);
 		border-color: rgb(var(--primary-highlight-color));
+	}
+
+	button.readOnly {
+		cursor: default;
 	}
 
 	.button-content {
