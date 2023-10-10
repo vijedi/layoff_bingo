@@ -1,13 +1,8 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	const dispatch = createEventDispatcher();
-
-	function forwardClick(evt) {
-		dispatch('click', evt);
-	}
 </script>
 
-<button type="button" on:click={forwardClick}><slot /></button>
+<button type="button" on:click><slot /></button>
 
 <style>
 	button {
