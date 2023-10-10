@@ -4,7 +4,6 @@
 	const dispatch = createEventDispatcher();
 
 	function close() {
-		console.log('dispatching');
 		dispatch('layoverRequestsClose');
 	}
 

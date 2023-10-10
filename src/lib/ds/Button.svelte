@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+
+	export let color = null;
 </script>
 
-<button type="button" on:click><slot /></button>
+<button type="button" on:click class:orange={color === 'orange'}><slot /></button>
 
 <style>
 	button {
@@ -19,5 +21,10 @@
 
 	button:hover {
 		letter-spacing: 1px;
+	}
+
+	button.orange {
+		background: rgb(var(--primary-highlight-color));
+		border: 2px solid rgb(var(--primary-highlight-color));
 	}
 </style>

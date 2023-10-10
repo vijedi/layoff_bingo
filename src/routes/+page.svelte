@@ -72,7 +72,9 @@
 
 {#if winningTiles}
 	<div class="winner-button-container">
-		<Button on:click={toggleWinnerLayover}>🎉🎉 Winner! Get Share Link 🎉🎉</Button>
+		<Button color="orange" on:click={toggleWinnerLayover}
+			>🎉🎉 Winner! Get Share Link 🎉🎉</Button
+		>
 	</div>
 {/if}
 
