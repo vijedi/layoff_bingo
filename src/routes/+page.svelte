@@ -1,6 +1,7 @@
 <script lang="ts">
 	import seedrandom from 'seedrandom';
 
+	import { onMount } from 'svelte';
 	import { generateBoard, checkIfWinner, getSelectedIds } from '$lib/board';
 	import { getBodyClassList } from '$lib/dom_util';
 	import { parseBoardState, saveBoardState } from '$lib/board_state_util';
@@ -16,10 +17,17 @@
 	const boardState = parseBoardState($page);
 
 	// If there is already a seed, go straight to creating a board
-	let board = boardState.seed ? generateBoard(boardState.seed) : null;
+	let board = boardState.seed
+		? generateBoard(boardState.seed, boardState.selected, boardState.readOnlyMode)
+		: null;
 
-	let displayWinnerDialog = false;
 	let winningTiles = null;
+	let displayWinnerDialog = false;
+
+	onMount(() => {
+		winningTiles = checkIfWinner(board);
+		toggleWinnerLayover();
+	});
 
 	const toggleWinnerLayover = () => {
 		if (winningTiles && !displayWinnerDialog) {

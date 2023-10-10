@@ -5,11 +5,15 @@
 
 	export let boardState: boardState;
 	const { origin, pathname } = $page.url;
-	let encodedState: string = encodeBoardState(boardState);
+	let encodedState: string = encodeBoardState({
+		...boardState,
+		isSharedBoard: true
+	});
 
 	const updateBoardState = ({ target: { value } }) => {
 		const withName: BoardState = {
 			...boardState,
+			isSharedBoard: true,
 			playerName: value
 		};
 
@@ -25,10 +29,10 @@
 <div class="share-container">
 	<h4>Share your board</h4>
 	<input name="name" placeholder="Enter your name" on:keyup={updateBoardState} />
-	<label>Your custom share link</label>
+	<label for="shareLink">Your custom share link</label>
 	<div class="copy-area">
-		<textarea readonly={true} rows="3" on:click={selectAllText}
-			>{[origin, pathname, encodedState].join('')}</textarea
+		<textarea id="shareLink" readonly={true} rows="3" on:click={selectAllText}
+			>{[origin, pathname, '?state=', encodedState].join('')}</textarea
 		>
 	</div>
 </div>

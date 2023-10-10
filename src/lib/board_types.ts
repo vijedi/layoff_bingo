@@ -35,6 +35,6 @@ export interface Board {
 export interface BoardState {
 	selected: string[];
 	seed?: number;
-	readOnlyMode?: boolean;
+	isSharedBoard?: boolean;
 	playerName?: string;
 }

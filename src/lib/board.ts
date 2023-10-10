@@ -10,7 +10,7 @@ const GRID_MIDDLE = Math.floor(GRID_SIZE / 2);
  * Generates a board from the potential candidates
  * @returns a 5x5 matrix of board squares
  */
-export function generateBoard(seed: number): Board {
+export function generateBoard(seed: number, selected: string[] = [], readOnly = false): Board {
 	// We are going to manipulate this list so we need to make a copy
 	const candidates = [...CLICHES];
 
@@ -32,8 +32,8 @@ export function generateBoard(seed: number): Board {
 
 				tiles[row].push({
 					id: cliche.id,
-					selected: false,
-					readOnly: false,
+					selected: selected.includes(cliche.id),
+					readOnly,
 					quote: cliche.text,
 					quoteAttribution: `${company.name}, ${layoffDate}`,
 					totalLayoffs: cliche.layoffIds.length,
