@@ -15,7 +15,6 @@ export function parseBoardState($page: SveltePage): BoardState {
 
 export function encodeBoardState(state: BoardState): string {
 	const asJson = JSON.stringify(state);
-	console.log(asJson);
 	return encodeURI(asJson);
 }
 

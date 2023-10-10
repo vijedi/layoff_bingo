@@ -18,7 +18,7 @@
 
 	// If there is already a seed, go straight to creating a board
 	let board = boardState.seed
-		? generateBoard(boardState.seed, boardState.selected, boardState.readOnlyMode)
+		? generateBoard(boardState.seed, boardState.selected, boardState.isSharedBoard)
 		: null;
 
 	let winningTiles = null;
