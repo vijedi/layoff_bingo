@@ -2,6 +2,7 @@
 	import type { Tile } from '$lib/board_types';
 	import { onMount } from 'svelte';
 	import TileQuoteCard from './TileQuoteCard.svelte';
+	import Button from './Button.svelte';
 
 	export let winningTiles: Tile[];
 	let cardIndex = 0;
@@ -40,9 +41,9 @@
 
 <div class="card-list">
 	<div class="card-nav">
-		<button type="button" on:click={moveBackward}>&laquo; Prev</button>
+		<Button on:click={moveBackward}>&laquo; Prev</Button>
 		<div>{cardIndex + 1} of {winningTiles.length}</div>
-		<button type="button" on:click={moveForward}>Next &raquo;</button>
+		<Button on:click={moveForward}>Next &raquo;</Button>
 	</div>
 	<div class="cards-container" bind:this={cardsContainer}>
 		{#each winningTiles as tile, i}
