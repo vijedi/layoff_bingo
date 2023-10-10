@@ -1,20 +1,35 @@
 <script lang="ts">
 	import seedrandom from 'seedrandom';
-	import Tile from './page/Tile.svelte';
-	import WinnerLayover from './page/WinnerLayover.svelte';
-	import GenerateButton from './page/GenerateButton.svelte';
+
 	import { generateBoard, checkIfWinner, getSelectedIds } from '$lib/board';
 	import { getBodyClassList } from '$lib/dom_util';
 	import { parseBoardState, saveBoardState } from '$lib/board_state_util';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
+	import Button from '$lib/ds/Button.svelte';
+	import Tile from './page/Tile.svelte';
+	import WinnerLayover from './page/WinnerLayover.svelte';
+	import GenerateButton from './page/GenerateButton.svelte';
+
+	// TODO: Board state should probably be a store
 	const boardState = parseBoardState($page);
+
 	// If there is already a seed, go straight to creating a board
 	let board = boardState.seed ? generateBoard(boardState.seed) : null;
 
 	let displayWinnerDialog = false;
-	let winningTiles = [];
+	let winningTiles = null;
+
+	const toggleWinnerLayover = () => {
+		if (winningTiles && !displayWinnerDialog) {
+			displayWinnerDialog = true;
+			getBodyClassList().add('no-scroll');
+		} else {
+			displayWinnerDialog = false;
+			getBodyClassList().remove('no-scroll');
+		}
+	};
 
 	const handleSelection = (event) => {
 		if (displayWinnerDialog) {
@@ -25,16 +40,7 @@
 		boardState.selected = getSelectedIds(board);
 		winningTiles = checkIfWinner(board);
 		saveBoardState($page, boardState);
-
-		if (winningTiles) {
-			displayWinnerDialog = true;
-			getBodyClassList().add('no-scroll');
-		}
-	};
-
-	const hideWinner = (event) => {
-		displayWinnerDialog = false;
-		getBodyClassList().remove('no-scroll');
+		toggleWinnerLayover();
 	};
 
 	const closeOnEsc = (event) => {
@@ -43,7 +49,7 @@
 		}
 
 		if (event.key === 'Escape') {
-			hideWinner();
+			toggleWinnerLayover();
 		}
 	};
 
@@ -55,6 +61,12 @@
 		}
 	};
 </script>
+
+{#if winningTiles}
+	<div class="winner-button-container">
+		<Button on:click={toggleWinnerLayover}>🎉🎉 Winner! Get Share Link 🎉🎉</Button>
+	</div>
+{/if}
 
 <ul class="title">
 	<li>L</li>
@@ -81,7 +93,7 @@
 {/if}
 
 {#if displayWinnerDialog}
-	<WinnerLayover {winningTiles} {boardState} on:layoverRequestsClose={hideWinner} />
+	<WinnerLayover {winningTiles} {boardState} on:layoverRequestsClose={toggleWinnerLayover} />
 {/if}
 
 <svelte:window on:keyup={closeOnEsc} />
@@ -117,5 +129,10 @@
 		color: rgb(var(--secondary-highlight-color));
 		font-weight: bold;
 		font-size: 3em;
+	}
+
+	.winner-button-container {
+		text-align: center;
+		margin: 0 0 16px 0;
 	}
 </style>
