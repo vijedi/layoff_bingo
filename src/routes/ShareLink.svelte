@@ -57,8 +57,7 @@
 	}
 
 	input,
-	textarea,
-	button {
+	textarea {
 		border: 2px solid rgba(var(--secondary-highlight-color), 0.6);
 		border-radius: 2px;
 	}
@@ -70,15 +69,6 @@
 	textarea {
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
-	}
-
-	button {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		background: rgb(var(--secondary-highlight-color));
-		color: white;
-		font-weight: bold;
-		cursor: pointer;
 	}
 
 	textarea {
