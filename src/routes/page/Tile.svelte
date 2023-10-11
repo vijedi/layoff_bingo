@@ -1,13 +1,16 @@
 <script lang="ts">
 	import type { Tile } from '$lib/board_types';
+	import { isCompactMode } from '$lib/ds/layout_helper';
 	import { createEventDispatcher } from 'svelte';
 
 	export let tile: Tile;
 
+	let outerWidth: number;
 	const dispatch = createEventDispatcher();
 
 	$: selected = tile.selected;
 	$: readOnly = tile.readOnly;
+	$: compactMode = isCompactMode(outerWidth);
 
 	function toggle() {
 		if (tile.readOnly) {
@@ -21,9 +24,15 @@
 
 <button type="button" on:click={toggle} class:selected class:readOnly>
 	<div class="button-content">
-		{tile.quote}
+		{#if compactMode}
+			{tile.id}
+		{:else}
+			{tile.quote}
+		{/if}
 	</div>
 </button>
+
+<svelte:window bind:outerWidth />
 
 <style>
 	button {
@@ -51,7 +60,7 @@
 		flex-shrink: 0;
 		padding: 0.1em;
 		font-size: 1em;
-		overflow-wrap: break-word;
+		overflow-wrap: word-break;
 		height: calc(100% - 9px);
 		width: calc(100% - 9px);
 		display: flex;
@@ -59,5 +68,7 @@
 		justify-content: center;
 		border: 3px solid transparent;
 		border-radius: 50%;
+		font-weight: bold;
+		color: rgb(var(--main-color));
 	}
 </style>

@@ -120,6 +120,7 @@
 
 	ul.board.empty {
 		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(1, 1fr);
 	}
 
 	li {
