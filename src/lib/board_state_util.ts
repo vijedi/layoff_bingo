@@ -21,5 +21,10 @@ export function encodeBoardState(state: BoardState): string {
 export function saveBoardState($page: SveltePage, state: BoardState): void {
 	const encoded = encodeBoardState(state);
 	$page.url.searchParams.set('state', encoded);
-	history.replaceState(history.state, '', $page.url);
+
+	try {
+		history.replaceState(history.state, '', $page.url);
+	} catch (err) {
+		console.debug('Running in a non-browser environment, skipping history update');
+	}
 }

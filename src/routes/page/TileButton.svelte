@@ -1,15 +1,11 @@
 <script lang="ts">
 	import type { Tile } from '$lib/board_types';
-	import { isCompactMode } from '$lib/ds/layout_helper';
 	import { selectedTilesStore } from '$lib/selected_tiles_store';
 
 	export let tile: Tile;
 
-	let outerWidth: number;
 	let selected;
 	let readOnly = tile.readOnly;
-
-	$: compactMode = isCompactMode(outerWidth);
 
 	selectedTilesStore.subscribe((store) => {
 		selected = !!store[tile.id];
@@ -27,53 +23,52 @@
 	}
 </script>
 
-<button type="button" on:click={toggle} class:selected class:readOnly>
+<button type="button" on:click={toggle} class:selected>
 	<div class="button-content">
-		{#if compactMode}
-			{tile.id}
-		{:else}
-			{tile.quote}
-		{/if}
+		<span class="highlight">{tile.id}</span>
+		{tile.quote}
 	</div>
 </button>
-
-<svelte:window bind:outerWidth />
 
 <style>
 	button {
 		background: transparent;
 		border: 0;
-		margin: 0;
-		padding: 4px;
+		margin: 4px 0;
+		padding: 12px 4px;
 		height: 100%;
 		width: 100%;
 		cursor: pointer;
 		text-transform: uppercase;
+		text-align: left;
+		border: 3px solid rgb(var(--primary-highlight-color));
+		display: block;
+		font-weight: bold;
+		color: rgb(var(--main-color));
 	}
 
-	button.selected .button-content {
+	button.selected {
 		background: rgba(var(--primary-highlight-color), 0.5);
-		border-color: rgb(var(--primary-highlight-color));
+	}
+
+	.button-content {
+		display: flex;
+		align-items: center;
+	}
+
+	.highlight {
+		display: flex;
+		background-color: rgb(var(--primary-highlight-color));
+		border-radius: 50%;
+		height: 2em;
+		width: 2em;
+		align-self: center;
+		align-items: center;
+		justify-content: center;
+		margin-right: 1em;
 	}
 
 	button.readOnly {
 		cursor: default;
-	}
-
-	.button-content {
-		text-align: center;
-		flex-shrink: 0;
-		padding: 0.1em;
-		font-size: 1em;
-		overflow-wrap: word-break;
-		height: calc(100% - 9px);
-		width: calc(100% - 9px);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 3px solid transparent;
-		border-radius: 50%;
-		font-weight: bold;
-		color: rgb(var(--main-color));
 	}
 </style>
