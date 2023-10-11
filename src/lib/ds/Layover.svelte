@@ -70,10 +70,22 @@
 		border: 8px solid rgb(var(--secondary-highlight-color));
 		border-radius: 8px;
 		padding: 1em;
-		max-width: 480px;
+		max-width: 460px;
 		box-shadow: 8px 8px 8px #00000000;
 		position: relative;
 		max-height: 80vh;
 		overflow: scroll;
+	}
+
+	@media screen and (max-width: 800px) {
+		.layover {
+			height: calc(100vh + 80px);
+			width: calc(100vw + 40px);
+		}
+
+		.container {
+			max-height: 90vh;
+			margin: 0 12px 0 12px;
+		}
 	}
 </style>
