@@ -74,7 +74,7 @@
 		box-shadow: 8px 8px 8px #00000000;
 		position: relative;
 		max-height: 80vh;
-		overflow: scroll;
+		overflow: auto;
 	}
 
 	@media screen and (max-width: 800px) {
