@@ -50,9 +50,8 @@
 		text-align: center;
 		flex-shrink: 0;
 		padding: 0.1em;
-		font-size: 1.2em;
+		font-size: 1em;
 		overflow-wrap: break-word;
-		max-height: calc(100vmin / 5);
 		height: calc(100% - 9px);
 		width: calc(100% - 9px);
 		display: flex;
@@ -60,6 +59,5 @@
 		justify-content: center;
 		border: 3px solid transparent;
 		border-radius: 50%;
-		overflow: hidden;
 	}
 </style>

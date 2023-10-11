@@ -115,7 +115,6 @@
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		border: 2px solid rgba(var(--primary-highlight-color), 0.8);
 		width: 100%;
 	}
 
@@ -124,12 +123,13 @@
 	}
 
 	li {
-		aspect-ratio: 1 / 1;
+		aspect-ratio: 1;
 		border: 2px solid rgba(var(--primary-highlight-color), 0.8);
 	}
 
-	ul.title {
-		border: 0;
+	ul.board {
+		grid-template-rows: repeat(5, 1fr);
+		border: 2px solid rgba(var(--primary-highlight-color), 0.8);
 	}
 
 	ul.title li {

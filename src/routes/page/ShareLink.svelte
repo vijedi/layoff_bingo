@@ -31,9 +31,14 @@
 	<input name="name" placeholder="Enter your name" on:keyup={updateBoardState} />
 	<label for="shareLink">Your custom share link</label>
 	<div class="copy-area">
-		<textarea id="shareLink" readonly={true} rows="3" on:click={selectAllText}
-			>{[origin, pathname, '?state=', encodedState].join('')}</textarea
-		>
+		<input
+			type="text"
+			id="shareLink"
+			readonly={true}
+			rows="3"
+			on:click={selectAllText}
+			value={[origin, pathname, '?state=', encodedState].join('')}
+		/>
 	</div>
 </div>
 
@@ -70,12 +75,7 @@
 		margin-top: 12px;
 	}
 
-	textarea {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	textarea {
+	#shareLink {
 		user-select: all;
 		width: 80%;
 		color: #888;
