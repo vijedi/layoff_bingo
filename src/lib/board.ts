@@ -77,7 +77,6 @@ function winnerEvaluator(board: Board, selectedIdMap: SelectedIds) {
 		const selected = [];
 		for (let inner = 0; inner < GRID_SIZE; inner++) {
 			const tile = getTile(typeof outer == 'number' ? outer || 0 : inner, inner);
-			console.log({ tileId: tile.id, selectedIdMap, selected: selectedIdMap[tile.id] });
 			if (selectedIdMap[tile.id]) {
 				selected.push(tile);
 			} else {

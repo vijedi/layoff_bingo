@@ -23,7 +23,7 @@
 	}
 </script>
 
-<button type="button" on:click={toggle} class:selected>
+<button type="button" on:click={toggle} class:selected class:readOnly>
 	<div class="button-content">
 		<span class="highlight">{tile.id}</span>
 		{tile.quote}

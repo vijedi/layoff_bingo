@@ -65,8 +65,7 @@
 		justify-content: center;
 	}
 
-	input,
-	textarea {
+	input {
 		border: 2px solid rgba(var(--secondary-highlight-color), 0.6);
 		border-radius: 2px;
 	}
