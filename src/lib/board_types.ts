@@ -20,7 +20,6 @@ export interface Company {
 export interface Tile {
 	id: string;
 	readOnly: boolean;
-	selected: boolean;
 	quote: string;
 	quoteAttribution: string;
 	totalLayoffs: number;
@@ -37,4 +36,8 @@ export interface BoardState {
 	seed?: number;
 	isSharedBoard?: boolean;
 	playerName?: string;
+}
+
+export interface SelectedIds {
+	[key: string]: boolean | null;
 }

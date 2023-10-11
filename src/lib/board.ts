@@ -1,5 +1,5 @@
 import seedrandom from 'seedrandom';
-import type { Tile, Board } from './board_types';
+import type { Tile, Board, SelectedIds } from './board_types';
 import { CLICHES, FREE_SPACE } from './board_content';
 import { getLayoffInfo, parseLayoffDate } from '$lib/content_util';
 
@@ -10,7 +10,7 @@ const GRID_MIDDLE = Math.floor(GRID_SIZE / 2);
  * Generates a board from the potential candidates
  * @returns a 5x5 matrix of board squares
  */
-export function generateBoard(seed: number, selected: string[] = [], readOnly = false): Board {
+export function generateBoard(seed: number, readOnly = false): Board {
 	// We are going to manipulate this list so we need to make a copy
 	const candidates = [...CLICHES];
 
@@ -32,7 +32,6 @@ export function generateBoard(seed: number, selected: string[] = [], readOnly = 
 
 				tiles[row].push({
 					id: cliche.id,
-					selected: selected.includes(cliche.id),
 					readOnly,
 					quote: cliche.text,
 					quoteAttribution: `${company.name}, ${layoffDate}`,
@@ -56,7 +55,6 @@ export function generateBoard(seed: number, selected: string[] = [], readOnly = 
 function generateFreeSpace(): Tile {
 	return {
 		...FREE_SPACE,
-		selected: true,
 		readOnly: true
 	};
 }
@@ -68,65 +66,69 @@ function generateFreeSpace(): Tile {
  * @param {Board} board - the board to check for winning conditions
  * @returns {boolean} true if the board is a winner via game rules
  */
-export function checkIfWinner(board: Board): Tile[] | null {
+export function checkIfWinner(board: Board, selectedIdMap: SelectedIds): Tile[] | null {
+	return winnerEvaluator(board, selectedIdMap).evaluate();
+}
+
+function winnerEvaluator(board: Board, selectedIdMap: SelectedIds) {
 	const tiles = board.tiles;
-	// There's a way to do this where you don't look at the same box twice, but it takes
-	// more memory and takes more time to write. This should be trivially quick and this
-	// approach is relatively easy to understand on a revisit.
-	return checkRows(tiles) || checkColumns(tiles) || checkDiagonals(tiles);
-}
 
-export function getSelectedIds(board: Board): string[] {
-	return board.tiles.flatMap((outer) =>
-		outer.filter((inner) => inner.selected).map((selected) => selected.id)
-	);
-}
-
-function checkIterate(getTile: (outer: number, inner: number) => Tile, outer?: number) {
-	const selected = [];
-	for (let inner = 0; inner < GRID_SIZE; inner++) {
-		const tile = getTile(typeof outer == 'number' ? outer || 0 : inner, inner);
-		if (tile.selected) {
-			selected.push(tile);
-		} else {
-			break;
+	function checkIterate(getTile: (outer: number, inner: number) => Tile, outer?: number) {
+		const selected = [];
+		for (let inner = 0; inner < GRID_SIZE; inner++) {
+			const tile = getTile(typeof outer == 'number' ? outer || 0 : inner, inner);
+			console.log({ tileId: tile.id, selectedIdMap, selected: selectedIdMap[tile.id] });
+			if (selectedIdMap[tile.id]) {
+				selected.push(tile);
+			} else {
+				break;
+			}
 		}
+
+		return selected;
 	}
 
-	return selected;
-}
+	function checkOuterIterate(getTile: (outer: number, inner: number) => Tile) {
+		for (let outer = 0; outer < GRID_SIZE; outer++) {
+			const selected = checkIterate(getTile, outer);
 
-function checkOuterIterate(getTile: (outer: number, inner: number) => Tile) {
-	for (let outer = 0; outer < GRID_SIZE; outer++) {
-		const selected = checkIterate(getTile, outer);
+			if (selected.length == GRID_SIZE) {
+				return selected;
+			}
+		}
 
+		return null;
+	}
+
+	function checkRows(): Tile[] | null {
+		// treat the outer iteration as rows and the inner iteration as columns
+		return checkOuterIterate((outer, inner) => tiles[outer][inner]);
+	}
+
+	function checkColumns(): Tile[] | null {
+		// treat the outer iteration as columns and the inner iteration as rows
+		return checkOuterIterate((outer, inner) => tiles[inner][outer]);
+	}
+
+	function checkDiagonals(): Tile[] | null {
+		let selected = checkIterate((pos) => tiles[pos][pos]);
 		if (selected.length == GRID_SIZE) {
 			return selected;
 		}
+
+		selected = checkIterate((pos) => tiles[GRID_SIZE - 1 - pos][pos]);
+		if (selected.length == GRID_SIZE) {
+			return selected;
+		}
+		return null;
 	}
 
-	return null;
-}
+	// There's a way to do this where you don't look at the same box twice, but it takes
+	// more memory and takes more time to write. This should be trivially quick and this
+	// approach is relatively easy to understand on a revisit.
+	const evaluate = () => checkRows() || checkColumns() || checkDiagonals();
 
-function checkRows(tiles: Tile[][]): Tile[] | null {
-	// treat the outer iteration as rows and the inner iteration as columns
-	return checkOuterIterate((outer, inner) => tiles[outer][inner]);
-}
-
-function checkColumns(tiles: Tile[][]): Tile[] | null {
-	// treat the outer iteration as columns and the inner iteration as rows
-	return checkOuterIterate((outer, inner) => tiles[inner][outer]);
-}
-
-function checkDiagonals(tiles: Tile[][]): Tile[] | null {
-	let selected = checkIterate((pos) => tiles[pos][pos]);
-	if (selected.length == GRID_SIZE) {
-		return selected;
-	}
-
-	selected = checkIterate((pos) => tiles[GRID_SIZE - 1 - pos][pos]);
-	if (selected.length == GRID_SIZE) {
-		return selected;
-	}
-	return null;
+	return {
+		evaluate
+	};
 }

@@ -2,7 +2,7 @@
 	import seedrandom from 'seedrandom';
 
 	import { onMount } from 'svelte';
-	import { generateBoard, checkIfWinner, getSelectedIds } from '$lib/board';
+	import { generateBoard, checkIfWinner } from '$lib/board';
 	import { selectedTilesStore, initSelectedTiles } from '$lib/selected_tiles_store';
 	import { getBodyClassList } from '$lib/dom_util';
 	import { parseBoardState, saveBoardState } from '$lib/board_state_util';
@@ -13,13 +13,10 @@
 	import Board from './page/Board.svelte';
 	import WinnerLayover from './page/WinnerLayover.svelte';
 
-	// TODO: Board state should probably be a store
 	const boardState = parseBoardState($page);
 
 	// If there is already a seed, go straight to creating a board
-	let board = boardState.seed
-		? generateBoard(boardState.seed, boardState.selected, boardState.isSharedBoard)
-		: null;
+	let board = boardState.seed ? generateBoard(boardState.seed, boardState.isSharedBoard) : null;
 
 	let winningTiles = null;
 	let displayWinnerDialog = false;
@@ -31,18 +28,9 @@
 			return;
 		}
 
-		boardState.selected = getSelectedIds(board);
-		winningTiles = checkIfWinner(board);
+		boardState.selected = Object.getOwnPropertyNames(selected);
+		winningTiles = checkIfWinner(board, selected);
 		saveBoardState($page, boardState);
-		toggleWinnerLayover();
-	});
-
-	onMount(() => {
-		if (!board) {
-			return;
-		}
-
-		winningTiles = checkIfWinner(board);
 		toggleWinnerLayover();
 	});
 
