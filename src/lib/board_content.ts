@@ -193,7 +193,7 @@ export const LAYOFFS: Layoff[] = [
 ];
 
 export const FREE_SPACE = Object.freeze({
-	id: 'free',
+	id: 'fr',
 	quote: 'Free Time',
 	quoteAttribution: 'You, Today',
 	totalLayoffs: 0
@@ -201,22 +201,22 @@ export const FREE_SPACE = Object.freeze({
 
 export const CLICHES: Cliche[] = [
 	{
-		id: '000',
+		id: '00',
 		text: 'boost operational efficiency',
 		layoffIds: ['evernote_07_23', 'meta_04_23']
 	},
 	{
-		id: '001',
+		id: '01',
 		text: 'impacted individuals',
 		layoffIds: ['evernote_07_23', 'indeed_03_23', 'glassdoor_03_23', 'amazon_03_23']
 	},
 	{
-		id: '002',
+		id: '02',
 		text: 'ambitious plans',
 		layoffIds: ['evernote_07_23']
 	},
 	{
-		id: '003',
+		id: '03',
 		text: 'I take full accountability',
 		layoffIds: ['headspace_06_23', 'indeed_03_23', 'hackerone_08_23']
 	},
@@ -232,162 +232,162 @@ export const CLICHES: Cliche[] = [
 		]
 	},
 	{
-		id: '005',
+		id: '05',
 		text: 'optimism got the best of us',
 		layoffIds: ['headspace_06_23']
 	},
 	{
-		id: '006',
+		id: '06',
 		text: 'hard calls',
 		layoffIds: ['headspace_06_23']
 	},
 	{
-		id: '007',
+		id: '07',
 		text: 'difficult capital markets',
 		layoffIds: ['headspace_06_23']
 	},
 	{
-		id: '008',
+		id: '08',
 		text: 'opportunity to be profitable',
 		layoffIds: ['headspace_06_23', 'lyft_04_23', 'planet_08_23']
 	},
 	{
-		id: '009',
+		id: '09',
 		text: 'closer to our purpose',
 		layoffIds: ['lyft_04_23']
 	},
 	{
-		id: '010',
+		id: '10',
 		text: 'difficult environment',
 		layoffIds: ['meta_04_23']
 	},
 	{
-		id: '011',
+		id: '11',
 		text: 'period of uncertainty',
 		layoffIds: ['meta_04_23', 'ea_03_23', 'amazon_03_23']
 	},
 	{
-		id: '012',
+		id: '12',
 		text: 'new economic reality',
 		layoffIds: ['meta_04_23']
 	},
 	{
-		id: '013',
+		id: '13',
 		text: 'position of strength',
 		layoffIds: ['ea_03_23']
 	},
 	{
-		id: '014',
+		id: '14',
 		text: 'lead this transformation',
 		layoffIds: ['ea_03_23']
 	},
 	{
-		id: '015',
+		id: '15',
 		text: 'evolving business needs',
 		layoffIds: ['lucid_03_23']
 	},
 	{
-		id: '016',
+		id: '16',
 		text: 'cost discipline',
 		layoffIds: ['lucid_03_23']
 	},
 	{
-		id: '017',
+		id: '17',
 		text: 'heartbroken',
 		layoffIds: ['indeed_03_23']
 	},
 	{
-		id: '018',
+		id: '18',
 		text: 'investing in our future',
 		layoffIds: ['indeed_03_23']
 	},
 	{
-		id: '019',
+		id: '19',
 		text: 'affect those who are staying',
 		layoffIds: ['indeed_03_23']
 	},
 	{
-		id: '020',
+		id: '20',
 		text: 'remain focused',
 		layoffIds: ['glassdoor_03_23']
 	},
 	{
-		id: '021',
+		id: '21',
 		text: 'support each other',
 		layoffIds: ['glassdoor_03_23']
 	},
 	{
-		id: '022',
+		id: '22',
 		text: 're-prioritization',
 		layoffIds: ['amazon_03_23']
 	},
 	{
-		id: '023',
+		id: '23',
 		text: 'optimistic about the future',
 		layoffIds: ['amazon_03_23']
 	},
 	{
-		id: '024',
+		id: '24',
 		text: 'rebalance',
 		layoffIds: ['atlassian_03_23']
 	},
 	{
-		id: '025',
+		id: '25',
 		text: 'valuable contributions',
 		layoffIds: ['twitter_11_22', 'planet_08_23']
 	},
 	{
-		id: '026',
+		id: '26',
 		text: 'healthy path',
 		layoffIds: ['twitter_11_22']
 	},
 	{
-		id: '027',
+		id: '27',
 		text: 'place of strength',
 		layoffIds: ['rapid7_08_23']
 	},
 	{
-		id: '028',
+		id: '28',
 		text: 'long term success',
 		layoffIds: ['rapid7_08_23']
 	},
 	{
-		id: '029',
+		id: '29',
 		text: 'scale intentionally',
 		layoffIds: ['rapid7_08_23']
 	},
 	{
-		id: '030',
+		id: '30',
 		text: 'painful and necessary',
 		layoffIds: ['hackerone_08_23']
 	},
 	{
-		id: '031',
+		id: '31',
 		text: 'shifts in our market',
 		layoffIds: ['hackerone_08_23']
 	},
 	{
-		id: '032',
+		id: '32',
 		text: 'one-time event',
 		layoffIds: ['hackerone_08_23']
 	},
 	{
-		id: '033',
+		id: '33',
 		text: 'historically understaffed',
 		layoffIds: ['planet_08_23']
 	},
 	{
-		id: '034',
+		id: '34',
 		text: 'narrow focus',
 		layoffIds: ['niantic_06_23']
 	},
 	{
-		id: '035',
+		id: '35',
 		text: 'unique challenges',
 		layoffIds: ['niantic_06_23']
 	},
 	{
-		id: '036',
+		id: '36',
 		text: 'streamline processes',
 		layoffIds: ['niantic_06_23']
 	}
