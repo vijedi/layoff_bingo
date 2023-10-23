@@ -63,6 +63,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Layoff bingo board</title>
+</svelte:head>
+
 {#if winningTiles}
 	<div class="winner-button-container">
 		<Button color="orange" on:click={toggleWinnerLayover}>
