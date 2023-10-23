@@ -69,22 +69,38 @@ export const COMPANIES: Company[] = [
 	{
 		companyId: 'rapid7',
 		name: 'Rapid7',
-		description: 'TBD'
+		description:
+			'Rapid7 is a SecOPs provider that provides a cloud to on-prem cybersecurity platform'
 	},
 	{
 		companyId: 'hackerone',
 		name: 'Hackerone',
-		description: 'TBD'
+		description:
+			'Hackerone provides hacking as a service to outmatch cybercriminals. Maybe I should not have included this one?'
 	},
 	{
 		companyId: 'planet',
 		name: 'Planet',
-		description: 'TBD'
+		description:
+			"Planet has set out to image all of Earth's landmass every day allowing smaller organizations to benefit from frequent imaging."
 	},
 	{
 		companyId: 'niantic',
 		name: 'Niantic',
-		description: 'TBD'
+		description:
+			'An augmented reality games platform, Niantic is going to change the world by allowing us to further immerse ourselves in our phones when outside.'
+	},
+	{
+		companyId: 'shopify',
+		name: 'Shopify',
+		description:
+			'A global e-commerce platform that allows smaller retailers to build an online presence without requiring internal software development help.'
+	},
+	{
+		companyId: 'flexport',
+		name: 'Flexport',
+		description:
+			'A logistical darling that heavily expanded during the pandemic to offer a digital-first freight forwarding experience.'
 	}
 ];
 
@@ -180,7 +196,7 @@ export const LAYOFFS: Layoff[] = [
 	{
 		layoffId: 'planet_08_23',
 		companyId: 'planet',
-		description: 'The company got to heavy and slow',
+		description: 'The company got too heavy and slow',
 		url: 'https://www.planet.com/pulse/a-note-from-our-ceo/'
 	},
 	{
@@ -189,6 +205,20 @@ export const LAYOFFS: Layoff[] = [
 		description:
 			'Another case of over expansion during the pandemic with the belief that customer behavior had changed for good instead of being a temporary blip.',
 		url: 'https://nianticlabs.com/news/organizational-update'
+	},
+	{
+		layoffId: 'shopify_05_23',
+		companyId: 'shopify',
+		description:
+			'The CEO decided that too much of the company was working on side quests and removed the NPCs that were preventing focus on the main quests.',
+		url: 'https://news.shopify.com/important-team-and-business-changes'
+	},
+	{
+		layoffId: 'flexport_10_23',
+		companyId: 'flexport',
+		description:
+			'The company, known for its frequent job postings on Hacker News, heavily expanded during the pandemic under the direction of Dave Clark. When shipping rates and volumes crashed, they found themselves in an unsustainable position.',
+		url: 'https://news.shopify.com/important-team-and-business-changes'
 	}
 ];
 
@@ -248,8 +278,8 @@ export const CLICHES: Cliche[] = [
 	},
 	{
 		id: '08',
-		text: 'opportunity to be profitable',
-		layoffIds: ['headspace_06_23', 'lyft_04_23', 'planet_08_23']
+		text: 'to be profitable',
+		layoffIds: ['headspace_06_23', 'lyft_04_23', 'planet_08_23', 'flexport_10_23']
 	},
 	{
 		id: '09',
@@ -390,5 +420,35 @@ export const CLICHES: Cliche[] = [
 		id: '36',
 		text: 'streamline processes',
 		layoffIds: ['niantic_06_23']
+	},
+	{
+		id: '37',
+		text: 'side quests (distractions)',
+		layoffIds: ['shopify_05_23']
+	},
+	{
+		id: '38',
+		text: 'new paradigm',
+		layoffIds: ['shopify_05_23']
+	},
+	{
+		id: '39',
+		text: 'AI',
+		layoffIds: ['shopify_05_23']
+	},
+	{
+		id: '39',
+		text: 'unhealthy',
+		layoffIds: ['shopify_05_23']
+	},
+	{
+		id: '40',
+		text: 'reliable partner',
+		layoffIds: ['flexport_10_23']
+	},
+	{
+		id: '41',
+		text: 'we are the leader',
+		layoffIds: ['flexport_10_23']
 	}
 ];
