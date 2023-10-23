@@ -65,9 +65,13 @@
 
 {#if winningTiles}
 	<div class="winner-button-container">
-		<Button color="orange" on:click={toggleWinnerLayover}
-			>🎉🎉 Winner! Get Share Link 🎉🎉</Button
-		>
+		<Button color="orange" on:click={toggleWinnerLayover}>
+			{#if boardState.isSharedBoard}
+				🎉🎉 Winner! See details on what matched 🎉🎉
+			{:else}
+				🎉🎉 Winner! Get Share Link 🎉🎉
+			{/if}
+		</Button>
 	</div>
 {/if}
 
