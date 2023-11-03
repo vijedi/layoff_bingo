@@ -28,7 +28,9 @@
 			return;
 		}
 
-		boardState.selected = Object.getOwnPropertyNames(selected);
+		boardState.selected = Object.entries(selected)
+			.filter(([tileId, selected]) => selected)
+			.map(([tileId]) => tileId);
 		winningTiles = checkIfWinner(board, selected);
 		saveBoardState($page, boardState);
 		toggleWinnerLayover();
@@ -90,6 +92,6 @@
 <style>
 	.winner-button-container {
 		text-align: center;
-		margin: 0 0 16px 0;
+		margin: 0 0 2em 0;
 	}
 </style>

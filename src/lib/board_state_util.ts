@@ -20,6 +20,7 @@ export function encodeBoardState(state: BoardState): string {
 }
 
 export function saveBoardState($page: SveltePage, state: BoardState): void {
+	console.log('saving board state');
 	const encoded = encodeBoardState(state);
 	$page.url.searchParams.set('state', encoded);
 

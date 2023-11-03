@@ -22,7 +22,7 @@ export const getLayoffInfo = (cliche: Cliche): { layoff: Layoff; company: Compan
 
 export const parseLayoffDate = (layoffId: string): string => {
 	const [, month, year] = layoffId.split('_');
-	const monthStr = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(month));
+	const monthStr = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(parseInt(month)));
 	return `${monthStr} ${year}`;
 };
 

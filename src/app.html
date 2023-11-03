@@ -13,6 +13,36 @@
 				--secondary-highlight-color-lighter: 249, 169, 244;
 			}
 
+			html {
+				box-sizing: border-box;
+				font-size: 16px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: inherit;
+			}
+
+			body,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			ol,
+			ul {
+				margin: 0;
+				padding: 0;
+				font-weight: normal;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
 			body {
 				padding: 0;
 				margin: 0;
@@ -51,6 +81,15 @@
 				box-shadow: 8px 6px 14px #000;
 			}
 
+			ol.instructions {
+				margin-left: 2ch;
+				margin-bottom: 2em;
+			}
+
+			ol.instructions li {
+				margin-bottom: 0.3em;
+			}
+
 			.page-container h1 {
 				text-align: center;
 			}
@@ -68,27 +107,43 @@
 			.footer p {
 				margin: 0.1em;
 			}
+
+			.footer .intro p {
+				text-align: left;
+				margin-bottom: 1em;
+			}
 		</style>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div class="page-container">
-			<h1>Layoff Bingo</h1>
-			<div class="intro">
-				<p>
-					In our era layoffs are just a fact of life. Whether it's to bring larger profits
-					or stave off imminent collapse, real people are going to be impacted and have to
-					deal with the stress of finding new work and taking care of themselves and their
-					families.
-				</p>
-				<p>
-					Before the stress, though, why not engage in some gallows humor and see just how
-					many layoff clichés your leader is going to use. Share with your colleagues,
-					generate your board, and the first one LETGO wins!
-				</p>
-			</div>
+			<h1 style="margin-bottom: 1em">Layoff Bingo</h1>
+			<h3 style="margin-bottom: 1em">How to Play</h3>
+			<ol class="instructions">
+				<li>Find unplanned all hands on your calendar</li>
+				<li>Make a quick appraisal of personal finances</li>
+				<li>Generate a board</li>
+				<li>Mark the clichés you hear, hopefully before you are let go</li>
+			</ol>
 			<div style="display: contents">%sveltekit.body%</div>
 			<div class="footer">
+				<div class="intro">
+					<div class="divider">∞ ∞ ∞</div>
+					<p>
+						In our era layoffs are just a fact of life. Whether it's to bring larger
+						profits or stave off imminent collapse, real people are going to be impacted
+						and have to deal with the stress of finding new work and taking care of
+						themselves and their families.
+					</p>
+					<p>
+						Before the stress, though, why not engage in some gallows humor and see just
+						how many layoff clichés your leader is going to use. Share with your
+						colleagues, generate your board, and the first one LETGO wins!
+					</p>
+					<div class="divider">∞ ∞ ∞</div>
+				</div>
+
 				<p>
 					Produced on a whim by <a href="https://tejusparikh.com">Tejus Parikh</a>. Board
 					code and content &copy; 2023 Tejus Parikh

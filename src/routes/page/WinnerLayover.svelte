@@ -32,7 +32,13 @@
 		text-align: center;
 	}
 
+	h1,
+	p {
+		margin-bottom: 0.75em;
+	}
+
 	h3 {
+		margin-top: 1.25em;
 		margin-bottom: 0.25em;
 	}
 </style>

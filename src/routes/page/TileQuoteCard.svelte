@@ -39,6 +39,19 @@
 		margin-bottom: 0.25em;
 	}
 
+	.company-container {
+		padding-top: 1em;
+	}
+
+	.card h4 {
+		font-weight: 600;
+		margin-bottom: 0.5em;
+	}
+
+	.card p {
+		margin-bottom: 1em;
+	}
+
 	.card blockquote {
 		position: relative;
 		letter-spacing: 0.03em;
