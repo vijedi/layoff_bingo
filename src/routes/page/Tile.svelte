@@ -6,10 +6,11 @@
 	export let tile: Tile;
 
 	let innerWidth: number;
+	let outerWidth: number;
 	let selected;
 	let readOnly = tile.readOnly;
 
-	$: compactMode = isCompactMode(innerWidth);
+	$: compactMode = isCompactMode(Math.min(innerWidth, outerWidth));
 
 	selectedTilesStore.subscribe((store) => {
 		selected = !!store[tile.id];
@@ -37,7 +38,7 @@
 	</div>
 </button>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth bind:outerWidth />
 
 <style>
 	button {

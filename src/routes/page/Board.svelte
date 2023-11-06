@@ -10,8 +10,9 @@
 
 	export let board: Board;
 	let innerWidth: number;
+	let outerWidth: number;
 
-	$: compactMode = isCompactMode(innerWidth);
+	$: compactMode = isCompactMode(Math.min(innerWidth, outerWidth));
 </script>
 
 <ul class="title">
@@ -49,7 +50,7 @@
 	</ul>
 {/if}
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth bind:outerWidth />
 
 <style>
 	ul {
