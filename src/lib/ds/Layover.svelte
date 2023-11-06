@@ -78,13 +78,10 @@
 	}
 
 	@media screen and (max-width: 800px) {
-		.layover {
-			height: calc(100vh + 80px);
-			width: calc(100vw + 40px);
-		}
-
 		.container {
-			max-height: 90vh;
+			max-height: 90svh;
+			top: 5svh;
+			position: fixed;
 			margin: 0 12px 0 12px;
 		}
 	}

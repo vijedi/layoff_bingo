@@ -20,7 +20,6 @@ export function encodeBoardState(state: BoardState): string {
 }
 
 export function saveBoardState($page: SveltePage, state: BoardState): void {
-	console.log('saving board state');
 	const encoded = encodeBoardState(state);
 	$page.url.searchParams.set('state', encoded);
 
@@ -29,4 +28,15 @@ export function saveBoardState($page: SveltePage, state: BoardState): void {
 	} catch (err) {
 		console.debug('Running in a non-browser environment, skipping history update');
 	}
+}
+
+export function clearState($page: SveltePage): void {
+	$page.url.searchParams.delete('state');
+	try {
+		history.replaceState(history.state, '', $page.url);
+	} catch (err) {
+		console.debug('Running in a non-browser environment, skipping history update');
+	}
+
+	window.location.reload();
 }

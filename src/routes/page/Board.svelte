@@ -9,9 +9,9 @@
 	import GenerateButton from './GenerateButton.svelte';
 
 	export let board: Board;
-	let outerWidth: number;
+	let innerWidth: number;
 
-	$: compactMode = isCompactMode(outerWidth);
+	$: compactMode = isCompactMode(innerWidth);
 </script>
 
 <ul class="title">
@@ -49,7 +49,7 @@
 	</ul>
 {/if}
 
-<svelte:window bind:outerWidth />
+<svelte:window bind:innerWidth />
 
 <style>
 	ul {

@@ -5,11 +5,11 @@
 
 	export let tile: Tile;
 
-	let outerWidth: number;
+	let innerWidth: number;
 	let selected;
 	let readOnly = tile.readOnly;
 
-	$: compactMode = isCompactMode(outerWidth);
+	$: compactMode = isCompactMode(innerWidth);
 
 	selectedTilesStore.subscribe((store) => {
 		selected = !!store[tile.id];
@@ -37,7 +37,7 @@
 	</div>
 </button>
 
-<svelte:window bind:outerWidth />
+<svelte:window bind:innerWidth />
 
 <style>
 	button {

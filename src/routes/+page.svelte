@@ -12,6 +12,7 @@
 	import Button from '$lib/ds/Button.svelte';
 	import Board from './page/Board.svelte';
 	import WinnerLayover from './page/WinnerLayover.svelte';
+	import ResetButton from './page/ResetButton.svelte';
 
 	const boardState = parseBoardState($page);
 
@@ -85,6 +86,10 @@
 
 {#if displayWinnerDialog}
 	<WinnerLayover {winningTiles} {boardState} on:layoverRequestsClose={toggleWinnerLayover} />
+{/if}
+
+{#if board}
+	<ResetButton />
 {/if}
 
 <svelte:window on:keyup={closeOnEsc} />

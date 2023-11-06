@@ -4,7 +4,9 @@
 	export let color = null;
 </script>
 
-<button type="button" on:click class:orange={color === 'orange'}><slot /></button>
+<button type="button" on:click class:orange={color === 'orange'} class:dark={color === 'dark'}
+	><slot /></button
+>
 
 <style>
 	button {
@@ -26,5 +28,11 @@
 	button.orange {
 		background: rgb(var(--primary-highlight-color));
 		border: 2px solid rgb(var(--primary-highlight-color));
+	}
+
+	button.dark {
+		color: white;
+		background: rgb(var(--main-color));
+		border: 2px solid rgb(var(--main-color));
 	}
 </style>
