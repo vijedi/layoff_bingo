@@ -1,7 +1,10 @@
 export interface Cliche {
 	id: string;
 	text: string;
-	layoffIds: string[];
+	layoffs: {
+		id: string;
+		quote: string;
+	}[];
 }
 
 export interface Layoff {

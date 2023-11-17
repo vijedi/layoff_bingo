@@ -233,222 +233,378 @@ export const CLICHES: Cliche[] = [
 	{
 		id: '00',
 		text: 'boost operational efficiency',
-		layoffIds: ['evernote_07_23', 'meta_04_23']
+		layoffs: [
+			{
+				id: 'evernote_07_23',
+				quote: `We're taking this step to <strong>boost operational efficiency</strong> and to make the most of the Bending Spoons employer brand, which is extremely strong in Europe.`
+			},
+			{
+				id: 'meta_04_23',
+				quote: `Our efficiency work has several parallel workstreams to improve <strong>organizational efficiency</strong>... I’ve said that part of our work will involve removing jobs`
+			}
+		]
 	},
 	{
 		id: '01',
 		text: 'impacted individuals',
-		layoffIds: ['evernote_07_23', 'indeed_03_23', 'glassdoor_03_23', 'amazon_03_23']
+		layoffs: [
+			{
+				id: 'evernote_07_23',
+				quote: `We’re also offering additional support to those in need, such as <strong>impacted individuals</strong> who are on a visa.`
+			},
+			{
+				id: 'indeed_03_23',
+				quote: `If your position has been eliminated, the subject will be “Your Position Has Been <strong>Impacted</strong>."`
+			},
+			{
+				id: 'glassdoor_03_23',
+				quote: `Those of <strong>you</strong> in the US whose roles are being <strong>impacted</strong> will receive a meeting invitation`
+			},
+			{
+				id: 'amazon_03_23',
+				quote: `we will communicate with the <strong>impacted employees</strong> (or where applicable in Europe, with employee representative bodies)`
+			}
+		]
 	},
 	{
 		id: '02',
 		text: 'ambitious plans',
-		layoffIds: ['evernote_07_23']
+		layoffs: [
+			{
+				id: 'evernote_07_23',
+				quote: `Our <strong>plans</strong> for Evernote are as <strong>ambitious</strong> as ever`
+			}
+		]
 	},
 	{
 		id: '03',
 		text: 'I take full accountability',
-		layoffIds: ['headspace_06_23', 'indeed_03_23', 'hackerone_08_23']
+		layoffs: [
+			{
+				id: 'headspace_06_23',
+				quote: `<strong>I want to take full accountability for where we are</strong>`
+			},
+			{
+				id: 'indeed_03_23',
+				quote: `<strong>I take sole accountability</strong> for where we are today. I am deeply and profoundly sorry.`
+			},
+			{
+				id: 'hackerone_08_23',
+				quote: `<strong>I take responsibility</strong> for the changes we are sharing today`
+			}
+		]
 	},
 	{
-		id: '004',
+		id: '04',
 		text: 'current (macro) economic environment',
-		layoffIds: [
-			'headspace_06_23',
-			'glassdoor_03_23',
-			'atlassian_03_23',
-			'hackerone_08_23',
-			'planet_08_23'
+		layoffs: [
+			{
+				id: 'headspace_06_23',
+				quote: `we underestimated just how much the <stong>current economic environment</strong> would affect buying behaviors across`
+			},
+			{
+				id: 'glassdoor_03_23',
+				quote: `we’ve provided regular updates on the <strong>shifting macroeconomic environment</strong> and the decisions we’ve made to operate conservatively amidst the uncertainty.`
+			},
+			{ id: 'atlassian_03_23', quote: `` },
+			{
+				id: 'hackerone_08_23',
+				quote: `we did not anticipate the degree to which the <strong>overall economic situation</strong>`
+			},
+			{ id: 'planet_08_23', quote: `` }
 		]
 	},
 	{
 		id: '05',
 		text: 'optimism got the best of us',
-		layoffIds: ['headspace_06_23']
+		layoffs: [
+			{ id: 'headspace_06_23', quote: `we let <strong>optimism get the best of us</strong>` }
+		]
 	},
 	{
 		id: '06',
 		text: 'hard calls',
-		layoffIds: ['headspace_06_23']
+		layoffs: [
+			{
+				id: 'headspace_06_23',
+				quote: `I didn't make all the <strong>hard calls</strong> last December that I needed to make`
+			}
+		]
 	},
 	{
 		id: '07',
 		text: 'difficult capital markets',
-		layoffIds: ['headspace_06_23']
+		layoffs: [
+			{ id: 'headspace_06_23', quote: `In light of the <strong>difficult capital markets</strong>` }
+		]
 	},
 	{
 		id: '08',
 		text: 'to be profitable',
-		layoffIds: ['headspace_06_23', 'lyft_04_23', 'planet_08_23', 'flexport_10_23']
+		layoffs: [
+			{
+				id: 'headspace_06_23',
+				quote: `we now need to make significant changes to ensure we still become <strong>profitable</strong>`
+			},
+			{ id: 'lyft_04_23', quote: `` },
+			{ id: 'planet_08_23', quote: `` },
+			{ id: 'flexport_10_23', quote: `` }
+		]
 	},
 	{
 		id: '09',
 		text: 'closer to our purpose',
-		layoffIds: ['lyft_04_23']
+		layoffs: [{ id: 'lyft_04_23', quote: `` }]
 	},
 	{
 		id: '10',
 		text: 'difficult environment',
-		layoffIds: ['meta_04_23']
+		layoffs: [
+			{
+				id: 'meta_04_23',
+				quote: `Improving Business Performance in a <strong>Difficult Economic Environment</strong>`
+			}
+		]
 	},
 	{
 		id: '11',
 		text: 'period of uncertainty',
-		layoffIds: ['meta_04_23', 'ea_03_23', 'amazon_03_23']
+		layoffs: [
+			{
+				id: 'meta_04_23',
+				quote: `My hope is to make these org changes as soon as possible in the year so we can get past this <strong>period</strong> of uncertainty and focus on the critical work ahead`
+			},
+			{
+				id: 'ea_03_23',
+				quote: ``
+			},
+			{
+				id: 'amazon_03_23',
+				quote: `<strong>uncertainty</strong> that exists in the near future`
+			}
+		]
 	},
 	{
 		id: '12',
 		text: 'new economic reality',
-		layoffIds: ['meta_04_23']
+		layoffs: [
+			{
+				id: 'meta_04_23',
+				quote: `I think we should prepare ourselves for the possibility that this <strong>new economic reality</strong> will continue for many years`
+			}
+		]
 	},
 	{
 		id: '13',
 		text: 'position of strength',
-		layoffIds: ['ea_03_23']
+		layoffs: [{ id: 'ea_03_23', quote: `` }]
 	},
 	{
 		id: '14',
 		text: 'lead this transformation',
-		layoffIds: ['ea_03_23']
+		layoffs: [{ id: 'ea_03_23', quote: `` }]
 	},
 	{
 		id: '15',
 		text: 'evolving business needs',
-		layoffIds: ['lucid_03_23']
+		layoffs: [{ id: 'lucid_03_23', quote: `` }]
 	},
 	{
 		id: '16',
 		text: 'cost discipline',
-		layoffIds: ['lucid_03_23']
+		layoffs: [{ id: 'lucid_03_23', quote: `` }]
 	},
 	{
 		id: '17',
 		text: 'heartbroken',
-		layoffIds: ['indeed_03_23']
+		layoffs: [
+			{
+				id: 'indeed_03_23',
+				quote: `I am <strong>heartbroken</strong> to share that I have made the difficult decision to reduce our headcount through layoffs.`
+			}
+		]
+	},
+	{
+		id: '17',
+		text: 'heartbroken',
+		layoffs: [
+			{
+				id: 'indeed_03_23',
+				quote: `I am <strong>heartbroken</strong> to share that I have made the difficult decision to reduce our headcount through layoffs.`
+			}
+		]
 	},
 	{
 		id: '18',
 		text: 'investing in our future',
-		layoffIds: ['indeed_03_23']
+		layoffs: [
+			{
+				id: 'indeed_03_23',
+				quote: `urgency to ensure that all of our energy is directed towards <strong>investing in our future</strong>.`
+			}
+		]
 	},
 	{
 		id: '19',
 		text: 'affect those who are staying',
-		layoffIds: ['indeed_03_23']
+		layoffs: [
+			{
+				id: 'indeed_03_23',
+				quote: `For those <strong>who are staying</strong>, I know this will deeply <strong>affect</strong>all of you.`
+			}
+		]
 	},
 	{
 		id: '20',
 		text: 'remain focused',
-		layoffIds: ['glassdoor_03_23']
+		layoffs: [
+			{
+				id: 'glassdoor_03_23',
+				quote: `we will take time in the coming weeks to adapt our plans to ensure we can <strong>remain focused</strong> on delivering this vision`
+			}
+		]
 	},
 	{
 		id: '21',
 		text: 'support each other',
-		layoffIds: ['glassdoor_03_23']
+		layoffs: [
+			{
+				id: 'glassdoor_03_23',
+				quote: `I ask that we all do our best to <strong>support one another</strong> during this time`
+			}
+		]
 	},
 	{
 		id: '22',
 		text: 're-prioritization',
-		layoffIds: ['amazon_03_23']
+		layoffs: [
+			{
+				id: 'amazon_03_23',
+				quote: `[our internal businesses] made <strong>re-prioritization</strong> decisions that sometimes led to role reductions`
+			}
+		]
 	},
 	{
 		id: '23',
 		text: 'optimistic about the future',
-		layoffIds: ['amazon_03_23']
+		layoffs: [
+			{
+				id: 'amazon_03_23',
+				quote: `I remain very <strong>optimistic about the future</strong> and the myriad of opportunities we have`
+			}
+		]
 	},
 	{
 		id: '24',
 		text: 'rebalance',
-		layoffIds: ['atlassian_03_23']
+		layoffs: [{ id: 'atlassian_03_23', quote: `` }]
 	},
 	{
 		id: '25',
 		text: 'valuable contributions',
-		layoffIds: ['twitter_11_22', 'planet_08_23']
+		layoffs: [
+			{ id: 'twitter_11_22', quote: `` },
+			{ id: 'planet_08_23', quote: `` }
+		]
 	},
 	{
 		id: '26',
 		text: 'healthy path',
-		layoffIds: ['twitter_11_22']
+		layoffs: [{ id: 'twitter_11_22', quote: `` }]
 	},
 	{
 		id: '27',
 		text: 'place of strength',
-		layoffIds: ['rapid7_08_23']
+		layoffs: [{ id: 'rapid7_08_23', quote: `` }]
 	},
 	{
 		id: '28',
 		text: 'long term success',
-		layoffIds: ['rapid7_08_23']
+		layoffs: [{ id: 'rapid7_08_23', quote: `` }]
 	},
 	{
 		id: '29',
 		text: 'scale intentionally',
-		layoffIds: ['rapid7_08_23']
+		layoffs: [{ id: 'rapid7_08_23', quote: `` }]
 	},
 	{
 		id: '30',
 		text: 'painful and necessary',
-		layoffIds: ['hackerone_08_23']
+		layoffs: [
+			{
+				id: 'hackerone_08_23',
+				quote: `I have made the <strong>painful and necessary</strong> decision to undertake a restructuring`
+			}
+		]
 	},
 	{
 		id: '31',
 		text: 'shifts in our market',
-		layoffIds: ['hackerone_08_23']
+		layoffs: [
+			{
+				id: 'hackerone_08_23',
+				quote: `the global economic situation and the <strong>resulting shifts in our market</strong>.`
+			}
+		]
 	},
 	{
 		id: '32',
 		text: 'one-time event',
-		layoffIds: ['hackerone_08_23']
+		layoffs: [
+			{
+				id: 'hackerone_08_23',
+				quote: `We’ve designed this reduction in force as a <strong>one-time event</strong>.`
+			}
+		]
 	},
 	{
 		id: '33',
 		text: 'historically understaffed',
-		layoffIds: ['planet_08_23']
+		layoffs: [{ id: 'planet_08_23', quote: `` }]
 	},
 	{
 		id: '34',
 		text: 'narrow focus',
-		layoffIds: ['niantic_06_23']
+		layoffs: [{ id: 'niantic_06_23', quote: `` }]
 	},
 	{
 		id: '35',
 		text: 'unique challenges',
-		layoffIds: ['niantic_06_23']
+		layoffs: [{ id: 'niantic_06_23', quote: `` }]
 	},
 	{
 		id: '36',
 		text: 'streamline processes',
-		layoffIds: ['niantic_06_23']
+		layoffs: [{ id: 'niantic_06_23', quote: `` }]
 	},
 	{
 		id: '37',
 		text: 'side quests (distractions)',
-		layoffIds: ['shopify_05_23']
+		layoffs: [{ id: 'shopify_05_23', quote: `` }]
 	},
 	{
 		id: '38',
 		text: 'new paradigm',
-		layoffIds: ['shopify_05_23']
+		layoffs: [{ id: 'shopify_05_23', quote: `` }]
 	},
 	{
 		id: '39',
 		text: 'AI',
-		layoffIds: ['shopify_05_23']
+		layoffs: [{ id: 'shopify_05_23', quote: `` }]
 	},
 	{
 		id: '39',
 		text: 'unhealthy',
-		layoffIds: ['shopify_05_23']
+		layoffs: [{ id: 'shopify_05_23', quote: `` }]
 	},
 	{
 		id: '40',
 		text: 'reliable partner',
-		layoffIds: ['flexport_10_23']
+		layoffs: [{ id: 'flexport_10_23', quote: `` }]
 	},
 	{
 		id: '41',
 		text: 'we are the leader',
-		layoffIds: ['flexport_10_23']
+		layoffs: [{ id: 'flexport_10_23', quote: `` }]
 	}
 ];
