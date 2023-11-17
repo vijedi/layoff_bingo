@@ -218,7 +218,7 @@ export const LAYOFFS: Layoff[] = [
 		companyId: 'flexport',
 		description:
 			'The company, known for its frequent job postings on Hacker News, heavily expanded during the pandemic under the direction of Dave Clark. When shipping rates and volumes crashed, they found themselves in an unsustainable position.',
-		url: 'https://news.shopify.com/important-team-and-business-changes'
+		url: 'https://www.flexport.com/blog/flexport-ceos-note-to-employees/'
 	}
 ];
 
@@ -240,7 +240,7 @@ export const CLICHES: Cliche[] = [
 			},
 			{
 				id: 'meta_04_23',
-				quote: `Our efficiency work has several parallel workstreams to improve <strong>organizational efficiency</strong>... I’ve said that part of our work will involve removing jobs`
+				quote: `Our efficiency work has several parallel workstreams to improve <strong>organizational efficiency</strong>... I’ve said that part of our work will involve removing jobs...`
 			}
 		]
 	},
@@ -258,11 +258,11 @@ export const CLICHES: Cliche[] = [
 			},
 			{
 				id: 'glassdoor_03_23',
-				quote: `Those of <strong>you</strong> in the US whose roles are being <strong>impacted</strong> will receive a meeting invitation`
+				quote: `Those of <strong>you</strong> in the US whose roles are being <strong>impacted</strong> will receive a meeting invitation...`
 			},
 			{
 				id: 'amazon_03_23',
-				quote: `we will communicate with the <strong>impacted employees</strong> (or where applicable in Europe, with employee representative bodies)`
+				quote: `...we will communicate with the <strong>impacted employees</strong> (or where applicable in Europe, with employee representative bodies)...`
 			}
 		]
 	},
@@ -272,7 +272,7 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'evernote_07_23',
-				quote: `Our <strong>plans</strong> for Evernote are as <strong>ambitious</strong> as ever`
+				quote: `Our <strong>plans</strong> for Evernote are as <strong>ambitious</strong> as ever...`
 			}
 		]
 	},
@@ -282,7 +282,7 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'headspace_06_23',
-				quote: `<strong>I want to take full accountability for where we are</strong>`
+				quote: `<strong>I want to take full accountability for where we are</strong>...`
 			},
 			{
 				id: 'indeed_03_23',
@@ -290,7 +290,7 @@ export const CLICHES: Cliche[] = [
 			},
 			{
 				id: 'hackerone_08_23',
-				quote: `<strong>I take responsibility</strong> for the changes we are sharing today`
+				quote: `<strong>I take responsibility</strong> for the changes we are sharing today...`
 			}
 		]
 	},
@@ -300,18 +300,24 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'headspace_06_23',
-				quote: `we underestimated just how much the <stong>current economic environment</strong> would affect buying behaviors across`
+				quote: `...we underestimated just how much the <stong>current economic environment</strong> would affect buying behaviors across...`
 			},
 			{
 				id: 'glassdoor_03_23',
-				quote: `we’ve provided regular updates on the <strong>shifting macroeconomic environment</strong> and the decisions we’ve made to operate conservatively amidst the uncertainty.`
+				quote: `...we’ve provided regular updates on the <strong>shifting macroeconomic environment</strong> and the decisions we’ve made to operate conservatively amidst the uncertainty.`
 			},
-			{ id: 'atlassian_03_23', quote: `` },
+			{
+				id: 'atlassian_03_23',
+				quote: `...better reflect operating in a changing and difficult <strong>macroeconomic environment</strong>...`
+			},
 			{
 				id: 'hackerone_08_23',
 				quote: `we did not anticipate the degree to which the <strong>overall economic situation</strong>`
 			},
-			{ id: 'planet_08_23', quote: `` }
+			{
+				id: 'planet_08_23',
+				quote: `Simultaneously, the <strong>macroeconomic environment</strong> has changed.`
+			}
 		]
 	},
 	{
@@ -346,15 +352,26 @@ export const CLICHES: Cliche[] = [
 				id: 'headspace_06_23',
 				quote: `we now need to make significant changes to ensure we still become <strong>profitable</strong>`
 			},
-			{ id: 'lyft_04_23', quote: `` },
-			{ id: 'planet_08_23', quote: `` },
-			{ id: 'flexport_10_23', quote: `` }
+			{
+				id: 'lyft_04_23',
+				quote: `With these changes, we have the opportunity to become the ... <strong>profitable business</strong> we should be.`
+			},
+			{ id: 'planet_08_23', quote: `while reinforcing <strong>our path to profitability</strong>` },
+			{
+				id: 'flexport_10_23',
+				quote: `take advantage of the opportunities in front of us to <strong>return to profitability</strong> as soon as the end of next year`
+			}
 		]
 	},
 	{
 		id: '09',
-		text: 'closer to our purpose',
-		layoffs: [{ id: 'lyft_04_23', quote: `` }]
+		text: 'companies have purpose',
+		layoffs: [
+			{
+				id: 'lyft_04_23',
+				quote: `As you’ve heard me say, great <strong>companies have purpose</strong>.`
+			}
+		]
 	},
 	{
 		id: '10',
@@ -376,7 +393,7 @@ export const CLICHES: Cliche[] = [
 			},
 			{
 				id: 'ea_03_23',
-				quote: ``
+				quote: `Even amidst <strong>macro uncertainty</strong>, EA is operating from a position of strength.`
 			},
 			{
 				id: 'amazon_03_23',
@@ -390,37 +407,47 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'meta_04_23',
-				quote: `I think we should prepare ourselves for the possibility that this <strong>new economic reality</strong> will continue for many years`
+				quote: `I think we should prepare ourselves for the possibility that this <strong>new economic reality</strong> will continue for many years...`
 			}
 		]
 	},
 	{
 		id: '13',
 		text: 'position of strength',
-		layoffs: [{ id: 'ea_03_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'ea_03_23',
+				quote: `Even amidst macro uncertainty, EA is operating from a <strong>position of strength</strong>.`
+			}
+		]
 	},
 	{
 		id: '14',
 		text: 'lead this transformation',
-		layoffs: [{ id: 'ea_03_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'ea_03_23',
+				quote: `...no team is better equipped to <strong>lead this transformation</strong> than us...`
+			}
+		]
 	},
 	{
 		id: '15',
 		text: 'evolving business needs',
-		layoffs: [{ id: 'lucid_03_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'lucid_03_23',
+				quote: `"Given <strong>evolving business needs</strong> and productivity improvements, we are reducing the size of our organization...`
+			}
+		]
 	},
 	{
 		id: '16',
 		text: 'cost discipline',
-		layoffs: [{ id: 'lucid_03_23', quote: `` }]
-	},
-	{
-		id: '17',
-		text: 'heartbroken',
 		layoffs: [
 			{
-				id: 'indeed_03_23',
-				quote: `I am <strong>heartbroken</strong> to share that I have made the difficult decision to reduce our headcount through layoffs.`
+				id: 'lucid_03_23',
+				quote: `This action is aligned with the <strong>cost discipline</strong> announcement...`
 			}
 		]
 	},
@@ -440,7 +467,7 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'indeed_03_23',
-				quote: `urgency to ensure that all of our energy is directed towards <strong>investing in our future</strong>.`
+				quote: `...urgency to ensure that all of our energy is directed towards <strong>investing in our future</strong>.`
 			}
 		]
 	},
@@ -460,7 +487,7 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'glassdoor_03_23',
-				quote: `we will take time in the coming weeks to adapt our plans to ensure we can <strong>remain focused</strong> on delivering this vision`
+				quote: `...we will take time in the coming weeks to adapt our plans to ensure we can <strong>remain focused</strong> on delivering this vision...`
 			}
 		]
 	},
@@ -470,7 +497,7 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'glassdoor_03_23',
-				quote: `I ask that we all do our best to <strong>support one another</strong> during this time`
+				quote: `I ask that we all do our best to <strong>support one another</strong> during this time...`
 			}
 		]
 	},
@@ -480,7 +507,7 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'amazon_03_23',
-				quote: `[our internal businesses] made <strong>re-prioritization</strong> decisions that sometimes led to role reductions`
+				quote: `...[our internal businesses] made <strong>re-prioritization</strong> decisions that sometimes led to role reductions...`
 			}
 		]
 	},
@@ -490,42 +517,73 @@ export const CLICHES: Cliche[] = [
 		layoffs: [
 			{
 				id: 'amazon_03_23',
-				quote: `I remain very <strong>optimistic about the future</strong> and the myriad of opportunities we have`
+				quote: `I remain very <strong>optimistic about the future</strong> and the myriad of opportunities we have...`
 			}
 		]
 	},
 	{
 		id: '24',
 		text: 'rebalance',
-		layoffs: [{ id: 'atlassian_03_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'atlassian_03_23',
+				quote: `...[we] announced a <strong>rebalancing</strong> of resources resulting in the elimination of certain roles...`
+			}
+		]
 	},
 	{
 		id: '25',
 		text: 'valuable contributions',
 		layoffs: [
-			{ id: 'twitter_11_22', quote: `` },
-			{ id: 'planet_08_23', quote: `` }
+			{
+				id: 'twitter_11_22',
+				quote: `...this will impact a number of individuals who have made <strong>valuable contributions</strong>...`
+			},
+			{
+				id: 'planet_08_23',
+				quote: `The <strong>contributions</strong> of the set of people whose roles are impacted today have been <strong>tremendous</strong>.`
+			}
 		]
 	},
 	{
 		id: '26',
 		text: 'healthy path',
-		layoffs: [{ id: 'twitter_11_22', quote: `` }]
+		layoffs: [
+			{
+				id: 'twitter_11_22',
+				quote: `In an effort to place [us] on a <strong>healthy path</strong>, we will go through the difficult process of reducing our global workforce...`
+			}
+		]
 	},
 	{
 		id: '27',
 		text: 'place of strength',
-		layoffs: [{ id: 'rapid7_08_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'rapid7_08_23',
+				quote: `...making decisions from a <strong>place of strength</strong> allows us the opportunity to restructure intentionally`
+			}
+		]
 	},
 	{
 		id: '28',
 		text: 'long term success',
-		layoffs: [{ id: 'rapid7_08_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'rapid7_08_23',
+				quote: `This restructuring ... will set up our teams and customers for <strong>long term success</strong>.`
+			}
+		]
 	},
 	{
 		id: '29',
 		text: 'scale intentionally',
-		layoffs: [{ id: 'rapid7_08_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'rapid7_08_23',
+				quote: `...and give us the flexibility to <strong>scale intentionally</strong>...`
+			}
+		]
 	},
 	{
 		id: '30',
@@ -560,51 +618,98 @@ export const CLICHES: Cliche[] = [
 	{
 		id: '33',
 		text: 'historically understaffed',
-		layoffs: [{ id: 'planet_08_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'planet_08_23',
+				quote: `building out teams that had been <strong>historically understaffed</strong>`
+			}
+		]
 	},
 	{
 		id: '34',
 		text: 'narrow focus',
-		layoffs: [{ id: 'niantic_06_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'niantic_06_23',
+				quote: `I have made the decision to <strong>narrow our focus</strong> for mobile game investments.`
+			}
+		]
 	},
 	{
 		id: '35',
 		text: 'unique challenges',
-		layoffs: [{ id: 'niantic_06_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'niantic_06_23',
+				quote: `We are operating in a tough market environment due to ... <strong>unique challenges</strong> in the mobile gaming and AR markets.`
+			}
+		]
 	},
 	{
 		id: '36',
 		text: 'streamline processes',
-		layoffs: [{ id: 'niantic_06_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'niantic_06_23',
+				quote: `The leadership team and I are committed to <strong>cutting out unnecessary processes</strong>`
+			}
+		]
 	},
 	{
 		id: '37',
 		text: 'side quests (distractions)',
-		layoffs: [{ id: 'shopify_05_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'shopify_05_23',
+				quote: `<strong>Side quests</strong> are always <strong>distracting</strong> because the company has to split focus`
+			}
+		]
 	},
 	{
 		id: '38',
 		text: 'new paradigm',
-		layoffs: [{ id: 'shopify_05_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'shopify_05_23',
+				quote: `But once [large companies] need to adapt to some <strong>new paradigm</strong> they can’t.`
+			}
+		]
 	},
 	{
 		id: '39',
 		text: 'AI',
-		layoffs: [{ id: 'shopify_05_23', quote: `` }]
+		layoffs: [
+			{ id: 'shopify_05_23', quote: `But now we are at the dawn of the <strong>AI</strong> era...` }
+		]
 	},
 	{
 		id: '39',
 		text: 'unhealthy',
-		layoffs: [{ id: 'shopify_05_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'shopify_05_23',
+				quote: `Our numbers were <strong>unhealthy</strong>, just like it is in much of the tech industry.`
+			}
+		]
 	},
 	{
 		id: '40',
 		text: 'reliable partner',
-		layoffs: [{ id: 'flexport_10_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'flexport_10_23',
+				quote: `Customers need to be able to count on [us] as a reliable partner`
+			}
+		]
 	},
 	{
 		id: '41',
 		text: 'we are the leader',
-		layoffs: [{ id: 'flexport_10_23', quote: `` }]
+		layoffs: [
+			{
+				id: 'flexport_10_23',
+				quote: `<strong>We are the</strong> technology <strong>leader</strong> in this space and will continue to accelerate. `
+			}
+		]
 	}
 ];
