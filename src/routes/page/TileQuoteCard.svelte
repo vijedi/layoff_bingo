@@ -7,11 +7,12 @@
 <div class="card">
 	<div class="quote-container">
 		<blockquote>
-			{tile.quote}
+			{@html tile.fullQuote}
 		</blockquote>
 		<div class="quote-author">
-			&mdash; {tile.quoteAttribution}
-			{#if tile.totalLayoffs > 0} and {tile.totalLayoffs} more{/if}
+			&mdash; <a target="_blank" rel="noopener noreferrer" href={tile.layoff?.url}
+				>{tile.quoteAttribution}</a
+			>
 		</div>
 	</div>
 	{#if tile.company}

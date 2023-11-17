@@ -35,9 +35,8 @@ export function generateBoard(seed: number, readOnly = false): Board {
 					readOnly,
 					quote: cliche.text,
 					quoteAttribution: `${company.name}, ${layoffDate}`,
-					totalLayoffs: cliche.layoffIds.length,
-					layoff: layoffInfo.layoff,
-					company
+					totalLayoffs: cliche.layoffs.length,
+					...layoffInfo
 				});
 				candidates.splice(candidateIndex, 1);
 			}

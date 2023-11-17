@@ -26,6 +26,7 @@ export interface Tile {
 	quote: string;
 	quoteAttribution: string;
 	totalLayoffs: number;
+	fullQuote: string;
 	company?: Company;
 	layoff?: Layoff;
 }

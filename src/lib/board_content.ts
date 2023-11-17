@@ -225,7 +225,8 @@ export const LAYOFFS: Layoff[] = [
 export const FREE_SPACE = Object.freeze({
 	id: 'fr',
 	quote: 'Free Time',
-	quoteAttribution: 'You, Today',
+	fullQuote: "I usually spend my free time worrying about when I'm going to work next.",
+	quoteAttribution: 'Merrit Wever',
 	totalLayoffs: 0
 });
 

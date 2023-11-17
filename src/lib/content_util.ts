@@ -1,9 +1,12 @@
 import type { Layoff, Company, Cliche } from './board_types';
 import { LAYOFFS, COMPANIES } from './board_content';
 
-export const getLayoffInfo = (cliche: Cliche): { layoff: Layoff; company: Company } => {
-	const layoffId = sample(cliche.layoffIds);
+export const getLayoffInfo = (
+	cliche: Cliche
+): { layoff: Layoff; company: Company; fullQuote: string } => {
+	const layoffDetail = sample(cliche.layoffs);
 
+	const layoffId = layoffDetail.id;
 	const layoff = LAYOFFS.find((layoff) => layoff.layoffId === layoffId);
 	if (!layoff) {
 		throw new Error(`Data Error: layoffId ${layoffId} not found!`);
@@ -16,7 +19,8 @@ export const getLayoffInfo = (cliche: Cliche): { layoff: Layoff; company: Compan
 
 	return {
 		layoff,
-		company
+		company,
+		fullQuote: layoffDetail.quote
 	};
 };
 
