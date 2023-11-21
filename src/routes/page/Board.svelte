@@ -15,44 +15,50 @@
 	$: compactMode = isCompactMode(Math.min(innerWidth, outerWidth));
 </script>
 
-<ul class="title">
-	<li>L</li>
-	<li>E</li>
-	<li>T</li>
-	<li>G</li>
-	<li>O</li>
-</ul>
-
-{#if board}
-	<ul class="board">
-		{#each board.tiles as row}
-			{#each row as tile}
-				<li><Tile {tile} on:tileSelected /></li>
-			{/each}
-		{/each}
+<div class="board-outer">
+	<ul class="title">
+		<li>L</li>
+		<li>E</li>
+		<li>T</li>
+		<li>G</li>
+		<li>O</li>
 	</ul>
 
-	{#if compactMode}
-		<h4>Clichés</h4>
-		<div class="mobile-buttons">
+	{#if board}
+		<ul class="board">
 			{#each board.tiles as row}
 				{#each row as tile}
-					<TileButton {tile} on:tileSelected />
+					<li><Tile {tile} on:tileSelected /></li>
 				{/each}
 			{/each}
-		</div>
+		</ul>
+
+		{#if compactMode}
+			<h4>Clichés</h4>
+			<div class="mobile-buttons">
+				{#each board.tiles as row}
+					{#each row as tile}
+						<TileButton {tile} on:tileSelected />
+					{/each}
+				{/each}
+			</div>
+		{/if}
+	{:else}
+		<ul class="board empty">
+			<li>
+				<GenerateButton on:generateBoard />
+			</li>
+		</ul>
 	{/if}
-{:else}
-	<ul class="board empty">
-		<li>
-			<GenerateButton on:generateBoard />
-		</li>
-	</ul>
-{/if}
+</div>
 
 <svelte:window bind:innerWidth bind:outerWidth />
 
 <style>
+	.board-outer {
+		border: 5px solid rgba(var(--primary-highlight-color), 0.8);
+		border-radius: 10px;
+	}
 	ul {
 		list-style: none;
 		margin: 0;
@@ -77,11 +83,15 @@
 		border: 2px solid rgba(var(--primary-highlight-color), 0.8);
 	}
 
-	ul.title li {
+	ul.title {
+		background: rgba(var(--primary-highlight-color), 0.8);
+	}
+
+	ul.title > li {
 		aspect-ratio: auto;
 		border: 0;
 		text-align: center;
-		color: rgb(var(--secondary-highlight-color));
+		color: white;
 		font-weight: bold;
 		font-size: 3em;
 	}

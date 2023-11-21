@@ -87,8 +87,10 @@
 				top: 0;
 			}
 
-			h1 {
-				margin: 0;
+			h1.main-title {
+				text-transform: uppercase;
+				color: rgb(var(--secondary-highlight-color));
+				font-weight: bold;
 			}
 
 			a,
@@ -142,20 +144,23 @@
 				text-align: left;
 				margin-bottom: 1em;
 			}
+
+			.footer .divider {
+				font-size: 72px;
+				line-height: 20px;
+				color: rgba(var(--primary-highlight-color));
+			}
+
+			.footer .divider span:nth-child(even) {
+				color: rgba(var(--secondary-highlight-color));
+			}
 		</style>
 
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div class="page-container">
-			<h1 style="margin-bottom: 1em">Layoff Bingo</h1>
-			<h3 style="margin-bottom: 1em">How to Play</h3>
-			<ol class="instructions">
-				<li>Find unplanned "All Hands" on your calendar</li>
-				<li>Make a quick appraisal of personal finances</li>
-				<li>Generate a board</li>
-				<li>Mark the clichés you hear, hopefully before you are let go</li>
-			</ol>
+			<h1 class="main-title" style="margin-bottom: 1em">Layoff Bingo</h1>
 			<div style="display: contents">%sveltekit.body%</div>
 			<div class="footer">
 				<div class="intro">
@@ -171,7 +176,7 @@
 						see just how many layoff clichés your leader is going to use. Share with
 						your colleagues, generate your board, and the first one LETGO wins!
 					</p>
-					<div class="divider">&emdash; &emdash; &emdash;</div>
+					<div class="divider"><span>·</span><span>·</span><span>·</span></div>
 				</div>
 
 				<p>
