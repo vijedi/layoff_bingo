@@ -101,6 +101,12 @@ export const COMPANIES: Company[] = [
 		name: 'Flexport',
 		description:
 			'A logistical darling that heavily expanded during the pandemic to offer a digital-first freight forwarding experience.'
+	},
+	{
+		companyId: 'google',
+		name: 'Google',
+		description:
+			'Originally a great search engine and famed for it\'s "Don\'t be evil" mantra Google has expanded into multiple high end technology areas.'
 	}
 ];
 
@@ -219,6 +225,13 @@ export const LAYOFFS: Layoff[] = [
 		description:
 			'The company, known for its frequent job postings on Hacker News, heavily expanded during the pandemic under the direction of Dave Clark. When shipping rates and volumes crashed, they found themselves in an unsustainable position.',
 		url: 'https://www.flexport.com/blog/flexport-ceos-note-to-employees/'
+	},
+	{
+		layoffId: 'google_01_24',
+		companyId: 'google',
+		description:
+			'Sundar felt that Google was not prioritizing the big priorities and needed to futher reduce his staff to create capacity for investment.',
+		url: 'https://www.theverge.com/2024/1/17/24042417/google-layoffs-2024-internal-employee-memo-sundar-pichai'
 	}
 ];
 
@@ -710,6 +723,17 @@ export const CLICHES: Cliche[] = [
 			{
 				id: 'flexport_10_23',
 				quote: `<strong>We are the</strong> technology <strong>leader</strong> in this space and will continue to accelerate. `
+			}
+		]
+	},
+	{
+		id: '42',
+		text: 'capacity for investment',
+		layoffs: [
+			{
+				id: 'google_01_24',
+				quote:
+					'We have ambitious goals and will be investing in our big priorities this year. The reality is that to create the <strong>capacity for this investment</strong>, we have to make tough choices.'
 			}
 		]
 	}
